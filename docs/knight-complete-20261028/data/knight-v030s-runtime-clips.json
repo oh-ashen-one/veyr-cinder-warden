@@ -1,0 +1,1496 @@
+{
+  "definition": "/Game/Characters/Customuse/RuntimePolish/DA_Knight",
+  "source": "/Game/Characters/Customuse/KnightB/v030s/DA_KnightB",
+  "previous": "/Game/Characters/Customuse/KnightB/v030q/DA_KnightB",
+  "skeletalMesh": "/Game/Characters/Customuse/KnightB/v029/Rig/IdleOneHand_Blender_v2r4.IdleOneHand_Blender_v2r4",
+  "clips": {
+    "Idle": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v026/Animations/Idle/IdleOneHand_Blender_v2r4.IdleOneHand_Blender_v2r4",
+      "playLength": 4.0,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v026/MeshVariants/knight_2bb061d3dbf92c62/IdleOneHand_Blender_v2r4.IdleOneHand_Blender_v2r4",
+      "weapon": "/Game/Characters/Customuse/KnightB/v026/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": true,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 60.0,
+      "rootSamples": 241,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "IdleOneHand_Blender_v2r4.glb",
+      "approvedSourceSHA256": "0ea615d1b0f5978e78d0d7f3e69f2dea7498a71525616cdaf6c7e769590f8493"
+    },
+    "IdleTwoHand": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v026/Animations/IdleTwoHand/IdleTwoHand_Blender_v2r4.IdleTwoHand_Blender_v2r4",
+      "playLength": 4.0,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v026/MeshVariants/knight_2bb061d3dbf92c62/IdleOneHand_Blender_v2r4.IdleOneHand_Blender_v2r4",
+      "weapon": "/Game/Characters/Customuse/KnightB/v026/Props/BoatGreatsword_Grip_v6/BoatGreatsword_Grip_v6.BoatGreatsword_Grip_v6",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": true,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 60.0,
+      "rootSamples": 241,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "IdleTwoHand_Blender_v2r4.glb",
+      "approvedSourceSHA256": "98e3bc6da65dbff373b72fccf5a453d26b24ff83f929b6699fab1172b96c0182"
+    },
+    "LightAttack": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v027/Animations/LightAttack/Mixamo_Attack_v17.Mixamo_Attack_v17",
+      "playLength": 1.5,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v027/MeshVariants/knight_571e0abbfde2720e/Mixamo_Walk_v17.Mixamo_Walk_v17",
+      "weapon": "/Game/Characters/Customuse/KnightB/v027/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.600000023841858,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": 0.5849999785423279,
+      "loop": false,
+      "damageWindows": [
+        [
+          0.45,
+          0.72
+        ]
+      ],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 120.0,
+      "rootSamples": 181,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Mixamo_Attack_v17.glb",
+      "approvedSourceSHA256": "48d202f1255f37e22cc170341f28d15b32a7c4ecece56b815adfc083974ed8cb"
+    },
+    "LightAttackTwoHand": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v026/Animations/LightAttackTwoHand/LightAttackTwoHand_Compact_Blender_v2r3.LightAttackTwoHand_Compact_Blender_v2r3",
+      "playLength": 1.2000000476837158,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v026/MeshVariants/knight_2bb061d3dbf92c62/IdleOneHand_Blender_v2r4.IdleOneHand_Blender_v2r4",
+      "weapon": "/Game/Characters/Customuse/KnightB/v026/Props/BoatGreatsword_Grip_v6/BoatGreatsword_Grip_v6.BoatGreatsword_Grip_v6",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [
+        [
+          0.35,
+          0.56
+        ]
+      ],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 60.83333206176758,
+      "rootSamples": 74,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "LightAttackTwoHand_Compact_Blender_v2r3.glb",
+      "approvedSourceSHA256": "3dab85375eb6dccfcd495a89426eda253e00057f423ec607aeb1e67e4fa951e8"
+    },
+    "HeavyAttack": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v026/Animations/HeavyAttack/HeavyAttackOneHand_Blender_v4r5.HeavyAttackOneHand_Blender_v4r5",
+      "playLength": 1.399999976158142,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v026/MeshVariants/knight_6d3b4c55bd8c3fa0/HeavyAttackOneHand_Blender_v4r3.HeavyAttackOneHand_Blender_v4r3",
+      "weapon": "/Game/Characters/Customuse/KnightB/v026/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [
+        [
+          0.52,
+          0.94
+        ]
+      ],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 60.0,
+      "rootSamples": 85,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "HeavyAttackOneHand_Blender_v4r5.glb",
+      "approvedSourceSHA256": "c49935418de2c2284edffc12df3314b9ef6c57bbeb60d66f221682b16932fbf0"
+    },
+    "HeavyAttackAlternate": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v026/Animations/HeavyAttackAlternate/HeavyAttackOneHand_Blender_v4r3.HeavyAttackOneHand_Blender_v4r3",
+      "playLength": 1.399999976158142,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v026/MeshVariants/knight_6d3b4c55bd8c3fa0/HeavyAttackOneHand_Blender_v4r3.HeavyAttackOneHand_Blender_v4r3",
+      "weapon": "/Game/Characters/Customuse/KnightB/v026/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [
+        [
+          0.52,
+          0.94
+        ]
+      ],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 60.0,
+      "rootSamples": 85,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "HeavyAttackOneHand_Blender_v4r3.glb",
+      "approvedSourceSHA256": "9acff6fe597bc01e7b863370674c370f95b33042526b4f744a6726137a3e3d19"
+    },
+    "HeavyAttackTwoHand": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v026/Animations/HeavyAttackTwoHand/StrongAttackTwoHand_Sweep_Blender_v2r3.StrongAttackTwoHand_Sweep_Blender_v2r3",
+      "playLength": 1.6133333444595337,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v026/MeshVariants/knight_2bb061d3dbf92c62/IdleOneHand_Blender_v2r4.IdleOneHand_Blender_v2r4",
+      "weapon": "/Game/Characters/Customuse/KnightB/v026/Props/BoatGreatsword_StrongGrip_v1/BoatGreatsword_StrongGrip_v1.BoatGreatsword_StrongGrip_v1",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [
+        [
+          0.43,
+          0.74
+        ]
+      ],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 60.123966217041016,
+      "rootSamples": 98,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "StrongAttackTwoHand_Sweep_Blender_v2r3.glb",
+      "approvedSourceSHA256": "9a80d30a24d1d1371a558756eab1f2228cb9e7e394009d4d783a9e9376a2f0fc"
+    },
+    "HeavyAttackTwoHandAlternate": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v026/Animations/HeavyAttackTwoHandAlternate/StrongAttackTwoHand_Thrust_Blender_v2r4.StrongAttackTwoHand_Thrust_Blender_v2r4",
+      "playLength": 2.306666612625122,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v026/MeshVariants/knight_2bb061d3dbf92c62/IdleOneHand_Blender_v2r4.IdleOneHand_Blender_v2r4",
+      "weapon": "/Game/Characters/Customuse/KnightB/v026/Props/BoatGreatsword_StrongGrip_v1/BoatGreatsword_StrongGrip_v1.BoatGreatsword_StrongGrip_v1",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [
+        [
+          0.7,
+          0.98
+        ]
+      ],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 60.26011657714844,
+      "rootSamples": 140,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "StrongAttackTwoHand_Thrust_Blender_v2r4.glb",
+      "approvedSourceSHA256": "6f8f5af34c7867cdbc0310184e4f39ff199a7747ca86c57faac429c80209d7b3"
+    },
+    "LightCombo": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v026/Animations/LightCombo/LightCombo_Blender_v5.LightCombo_Blender_v5",
+      "playLength": 3.319999933242798,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v026/MeshVariants/knight_9eeb95137c66d34d/Heal_Blender_v4.Heal_Blender_v4",
+      "weapon": "/Game/Characters/Customuse/KnightB/v026/Props/BoatGreatsword_Grip_v6/BoatGreatsword_Grip_v6.BoatGreatsword_Grip_v6",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [
+        [
+          0.3,
+          0.5
+        ],
+        [
+          0.7667,
+          1.0333
+        ],
+        [
+          1.6,
+          1.9633
+        ]
+      ],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 60.240966796875,
+      "rootSamples": 201,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "LightCombo_Blender_v5.glb",
+      "approvedSourceSHA256": "bc17c661a2efea6ea2a8d1726631bfd27071373eb89c760f1b225cf634c8a7f2"
+    },
+    "RollAttack": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v030s/Animations/RollAttack/Sourced_RollAttack_v7.Sourced_RollAttack_v7",
+      "playLength": 2.200000047683716,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v029/MeshVariants/knight_571e0abbfde2720e/Sourced_BlinkRight_Transit_v2.Sourced_BlinkRight_Transit_v2",
+      "weapon": "/Game/Characters/Customuse/KnightB/v029/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.2820513248443604,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": 1.468000054359436,
+      "loop": false,
+      "damageWindows": [
+        [
+          1.36,
+          1.576
+        ]
+      ],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": true,
+      "rootSampleRate": 300.0,
+      "rootSamples": 661,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -1.5776072813576108e-05,
+          251.67662994974563,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Sourced_RollAttack_v7.glb",
+      "approvedSourceSHA256": "e2c58dc5d6bf9e8f89d8fa8b4af30c4e179ed60b234150c4be40e595fa5e0a5d"
+    },
+    "GuardBreak": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v026/Animations/GuardBreak/GuardBreakStagger_Blender_v1r2.GuardBreakStagger_Blender_v1r2",
+      "playLength": 1.2000000476837158,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v026/MeshVariants/knight_2bb061d3dbf92c62/IdleOneHand_Blender_v2r4.IdleOneHand_Blender_v2r4",
+      "weapon": "/Game/Characters/Customuse/KnightB/v026/Props/BoatGreatsword_Grip_v6/BoatGreatsword_Grip_v6.BoatGreatsword_Grip_v6",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": true,
+      "rootSampleRate": 60.83333206176758,
+      "rootSamples": 74,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -5.2804798034156164e-08,
+          -21.000003877562516,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "GuardBreakStagger_Blender_v1r2.glb",
+      "approvedSourceSHA256": "9f61e24f76959b53ce34198b67509ba9d19d9bdb1f72bf12b72ceb93b3fac548"
+    },
+    "GuardTwoHand": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v026/Animations/GuardTwoHand/GuardReadyTwoHand_Blender_v4r4.GuardReadyTwoHand_Blender_v4r4",
+      "playLength": 0.699999988079071,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v026/MeshVariants/knight_9eeb95137c66d34d/Heal_Blender_v4.Heal_Blender_v4",
+      "weapon": "/Game/Characters/Customuse/KnightB/v026/Props/BoatGreatsword_Grip_v6/BoatGreatsword_Grip_v6.BoatGreatsword_Grip_v6",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 60.0,
+      "rootSamples": 43,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "GuardReadyTwoHand_Blender_v4r4.glb",
+      "approvedSourceSHA256": "6d926dab7b79e78e2d80cf924003424f1fad404e2c8d8ac9e1ca1174271b6d81"
+    },
+    "Heal": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v026/Animations/Heal/Heal_Blender_v4.Heal_Blender_v4",
+      "playLength": 2.4000000953674316,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v026/MeshVariants/knight_9eeb95137c66d34d/Heal_Blender_v4.Heal_Blender_v4",
+      "weapon": "/Game/Characters/Customuse/KnightB/v026/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 60.416664123535156,
+      "rootSamples": 146,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Heal_Blender_v4.glb",
+      "approvedSourceSHA256": "54a3a0b5ad615a363509fbeb790ca613da3058bdb9079f999414f68e9560413f"
+    },
+    "Walk": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v027/Animations/Walk/Mixamo_Walk_v17.Mixamo_Walk_v17",
+      "playLength": 1.100000023841858,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v027/MeshVariants/knight_571e0abbfde2720e/Mixamo_Walk_v17.Mixamo_Walk_v17",
+      "weapon": "/Game/Characters/Customuse/KnightB/v027/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": true,
+      "damageWindows": [],
+      "nominalSpeed": 200.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 120.0,
+      "rootSamples": 133,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Mixamo_Walk_v17.glb",
+      "approvedSourceSHA256": "5486b8ff0871ba249fd21eb7d0f62e15585a8c8a797c632a5ebfc24bb2d87c30"
+    },
+    "WalkTwoHand": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v027/Animations/WalkTwoHand/Mixamo_WalkTwoHand_v17.Mixamo_WalkTwoHand_v17",
+      "playLength": 1.100000023841858,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v027/MeshVariants/knight_571e0abbfde2720e/Mixamo_Walk_v17.Mixamo_Walk_v17",
+      "weapon": "/Game/Characters/Customuse/KnightB/v027/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": true,
+      "damageWindows": [],
+      "nominalSpeed": 200.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 120.0,
+      "rootSamples": 133,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Mixamo_WalkTwoHand_v17.glb",
+      "approvedSourceSHA256": "7ec3bce2098ac860dcf81133a83ad65eba388a249f30cd1833f73d3a8617adfd"
+    },
+    "Run": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v027/Animations/Run/Fab_RunOneHand_v18.Fab_RunOneHand_v18",
+      "playLength": 0.5600000023841858,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v027/MeshVariants/knight_571e0abbfde2720e/Mixamo_Walk_v17.Mixamo_Walk_v17",
+      "weapon": "/Game/Characters/Customuse/KnightB/v027/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": true,
+      "damageWindows": [],
+      "nominalSpeed": 800.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 100.0,
+      "rootSamples": 57,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Fab_RunOneHand_v18.glb",
+      "approvedSourceSHA256": "a60395b262f6452fc8f63f3d789edd1cc7ba17059beb883c91e2d2e7a3e86faf"
+    },
+    "RunAlternate": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v026/Animations/RunAlternate/RunOneHand_Blender_meshy_r3.RunOneHand_Blender_meshy_r3",
+      "playLength": 0.6000000238418579,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v026/MeshVariants/knight_9eeb95137c66d34d/Heal_Blender_v4.Heal_Blender_v4",
+      "weapon": "/Game/Characters/Customuse/KnightB/v026/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": true,
+      "damageWindows": [],
+      "nominalSpeed": 508.8226013183594,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 61.666664123535156,
+      "rootSamples": 38,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "RunOneHand_Blender_meshy_r3.glb",
+      "approvedSourceSHA256": "991b1454a6d65afcf0cc70c259fcad000ade3bef8e99be163e297848a810ebec"
+    },
+    "RunStop": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v026/Animations/RunStop/RunStop_Blender_v1r2.RunStop_Blender_v1r2",
+      "playLength": 0.6000000238418579,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v026/MeshVariants/knight_9eeb95137c66d34d/Heal_Blender_v4.Heal_Blender_v4",
+      "weapon": "/Game/Characters/Customuse/KnightB/v026/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 61.666664123535156,
+      "rootSamples": 38,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "RunStop_Blender_v1r2.glb",
+      "approvedSourceSHA256": "bd5ee8f30e6198ffa39475c9a44e4a8f474c1673c4d29b2e9b22ba23782d4aee"
+    },
+    "Backpedal": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v026/Animations/Backpedal/Backpedal_Blender_loop_v1r3.Backpedal_Blender_loop_v1r3",
+      "playLength": 1.2000000476837158,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v026/MeshVariants/knight_9eeb95137c66d34d/Heal_Blender_v4.Heal_Blender_v4",
+      "weapon": "/Game/Characters/Customuse/KnightB/v026/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": true,
+      "damageWindows": [],
+      "nominalSpeed": 59.945499420166016,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 60.83333206176758,
+      "rootSamples": 74,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Backpedal_Blender_loop_v1r3.glb",
+      "approvedSourceSHA256": "7e92b2ab6dc6bb6302b8410d749bab219088f78d6d670a67b092ad51743ce737"
+    },
+    "BackpedalStep": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v026/Animations/BackpedalStep/Backpedal_Blender_v4r5.Backpedal_Blender_v4r5",
+      "playLength": 2.4000000953674316,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v026/MeshVariants/knight_9eeb95137c66d34d/Heal_Blender_v4.Heal_Blender_v4",
+      "weapon": "/Game/Characters/Customuse/KnightB/v026/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": true,
+      "rootSampleRate": 60.416664123535156,
+      "rootSamples": 146,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          5.118094906220172e-07,
+          -36.00000149337673,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Backpedal_Blender_v4r5.glb",
+      "approvedSourceSHA256": "5b2ac980dec8cd5b3e69867b807c02d50d966748a200cb11b1256a16ab2d6d83"
+    },
+    "BlinkLeft": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v030s/Animations/BlinkLeft/Knight_BlinkLeft_v7c.Knight_BlinkLeft_v7c",
+      "playLength": 0.699999988079071,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v029/MeshVariants/knight_571e0abbfde2720e/Sourced_BlinkRight_Transit_v2.Sourced_BlinkRight_Transit_v2",
+      "weapon": "/Game/Characters/Customuse/KnightB/v029/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.149999976158142,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": true,
+      "rootSampleRate": 120.0,
+      "rootSamples": 85,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          122.3,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Knight_BlinkLeft_v7c.glb",
+      "approvedSourceSHA256": "894140c2e41aa0b1618a853b554f68c10310badda625448e4772879657a4c134"
+    },
+    "BlinkRight": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v030s/Animations/BlinkRight/Knight_BlinkRight_v7c.Knight_BlinkRight_v7c",
+      "playLength": 0.699999988079071,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v029/MeshVariants/knight_571e0abbfde2720e/Sourced_BlinkRight_Transit_v2.Sourced_BlinkRight_Transit_v2",
+      "weapon": "/Game/Characters/Customuse/KnightB/v029/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.149999976158142,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": true,
+      "rootSampleRate": 120.0,
+      "rootSamples": 85,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -122.3,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Knight_BlinkRight_v7c.glb",
+      "approvedSourceSHA256": "62016ba16a31bc14e64ecbf996f913aed5813b49ccce5e2ac41c79bf003f3cef"
+    },
+    "Stagger": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v026/Animations/Stagger/Stagger_Blender_v2r5.Stagger_Blender_v2r5",
+      "playLength": 0.41999998688697815,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v026/MeshVariants/knight_9eeb95137c66d34d/Heal_Blender_v4.Heal_Blender_v4",
+      "weapon": "/Game/Characters/Customuse/KnightB/v026/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 61.904762268066406,
+      "rootSamples": 27,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Stagger_Blender_v2r5.glb",
+      "approvedSourceSHA256": "c4692bfb7634a9de2cc19cd1a73b3acc6f17e24259aed51a463c968202702707"
+    },
+    "Death": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v026/Animations/Death/Death_Blender_v2r3.Death_Blender_v2r3",
+      "playLength": 4.400000095367432,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v026/MeshVariants/knight_9eeb95137c66d34d/Heal_Blender_v4.Heal_Blender_v4",
+      "weapon": "/Game/Characters/Customuse/KnightB/v026/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 60.227272033691406,
+      "rootSamples": 266,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Death_Blender_v2r3.glb",
+      "approvedSourceSHA256": "2f3a8a326f741d95423ac22cffb1047e3e8c46ede3d1f063f5d8b8cfdb2ba804"
+    },
+    "Roll": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v027/Animations/Roll/Fab_Roll_v17.Fab_Roll_v17",
+      "playLength": 1.0,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v027/MeshVariants/knight_571e0abbfde2720e/Mixamo_Walk_v17.Mixamo_Walk_v17",
+      "weapon": "/Game/Characters/Customuse/KnightB/v027/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.2820513248443604,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": true,
+      "rootSampleRate": 100.0,
+      "rootSamples": 101,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -5.465429366729512e-06,
+          251.67662926732493,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Fab_Roll_v17.glb",
+      "approvedSourceSHA256": "d6f7724fbee9d5ba59b62ce2f33961034348032af3589961d3e2f14e232ebf5a"
+    },
+    "RunTwoHand": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v027/Animations/RunTwoHand/Fab_Run_v17.Fab_Run_v17",
+      "playLength": 0.5600000023841858,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v027/MeshVariants/knight_571e0abbfde2720e/Mixamo_Walk_v17.Mixamo_Walk_v17",
+      "weapon": "/Game/Characters/Customuse/KnightB/v027/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": true,
+      "damageWindows": [],
+      "nominalSpeed": 800.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 100.0,
+      "rootSamples": 57,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Fab_Run_v17.glb",
+      "approvedSourceSHA256": "bf2496e6440a74140c85d526466f3611955cd4b2c9c310d8d6c615d9acafc139"
+    },
+    "GripToTwoHand": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v026/Animations/GripToTwoHand/GripToTwoHand_Blender_polish_v2.GripToTwoHand_Blender_polish_v2",
+      "playLength": 0.5,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v026/MeshVariants/knight_2bb061d3dbf92c62/IdleOneHand_Blender_v2r4.IdleOneHand_Blender_v2r4",
+      "weapon": "/Game/Characters/Customuse/KnightB/v026/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 60.0,
+      "rootSamples": 31,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "GripToTwoHand_Blender_polish_v2.glb",
+      "approvedSourceSHA256": "515907a8a9398df9f7b9ae587121d4bd71ab706ab46578a4e40c191b27701d57"
+    },
+    "GripToOneHand": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v026/Animations/GripToOneHand/GripToOneHand_Blender_polish_v2.GripToOneHand_Blender_polish_v2",
+      "playLength": 0.5,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v026/MeshVariants/knight_2bb061d3dbf92c62/IdleOneHand_Blender_v2r4.IdleOneHand_Blender_v2r4",
+      "weapon": "/Game/Characters/Customuse/KnightB/v026/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 60.0,
+      "rootSamples": 31,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "GripToOneHand_Blender_polish_v2.glb",
+      "approvedSourceSHA256": "2794473421f170b94da3960b2c5f564f7ea2946cb336d83c7fd2b9b7d7df0469"
+    },
+    "StrafeLeft": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v030p/Animations/StrafeLeft/Knight_StrafeLeft_v4c.Knight_StrafeLeft_v4c",
+      "playLength": 1.1333333253860474,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v029/MeshVariants/knight_571e0abbfde2720e/Sourced_BlinkRight_Transit_v2.Sourced_BlinkRight_Transit_v2",
+      "weapon": "/Game/Characters/Customuse/KnightB/v029/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": true,
+      "damageWindows": [],
+      "nominalSpeed": 163.60000610351562,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 120.0,
+      "rootSamples": 137,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Knight_StrafeLeft_v4c.glb",
+      "approvedSourceSHA256": "d3056114cd4dfa19cc3a2d432d095a1e7a4fed56bf0978319661a87560b3c2ae"
+    },
+    "StrafeRunLeft": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v030s/Animations/StrafeRunLeft/Knight_StrafeRunLeft_v6r.Knight_StrafeRunLeft_v6r",
+      "playLength": 0.6433333158493042,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v029/MeshVariants/knight_571e0abbfde2720e/Sourced_BlinkRight_Transit_v2.Sourced_BlinkRight_Transit_v2",
+      "weapon": "/Game/Characters/Customuse/KnightB/v029/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": true,
+      "damageWindows": [],
+      "nominalSpeed": 453.3999938964844,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 120.0,
+      "rootSamples": 78,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Knight_StrafeRunLeft_v6r.glb",
+      "approvedSourceSHA256": "7ea762b7f1cf36252ed346b3a263194e49c0fc1281d71e335c9dba7ae2d88b5b"
+    },
+    "StrafeLeftTwoHand": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v030p/Animations/StrafeLeftTwoHand/Knight_StrafeLeftTwoHand_v4c.Knight_StrafeLeftTwoHand_v4c",
+      "playLength": 1.1333333253860474,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v029/MeshVariants/knight_571e0abbfde2720e/Sourced_BlinkRight_Transit_v2.Sourced_BlinkRight_Transit_v2",
+      "weapon": "/Game/Characters/Customuse/KnightB/v029/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": true,
+      "damageWindows": [],
+      "nominalSpeed": 163.60000610351562,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 120.0,
+      "rootSamples": 137,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Knight_StrafeLeftTwoHand_v4c.glb",
+      "approvedSourceSHA256": "62e0f53eae2e8165616c17eb969022c7e03b8b5f6c9bba821f4209afcf90baaf"
+    },
+    "StrafeRunLeftTwoHand": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v030s/Animations/StrafeRunLeftTwoHand/Knight_StrafeRunLeftTwoHand_v6r.Knight_StrafeRunLeftTwoHand_v6r",
+      "playLength": 0.6433333158493042,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v029/MeshVariants/knight_571e0abbfde2720e/Sourced_BlinkRight_Transit_v2.Sourced_BlinkRight_Transit_v2",
+      "weapon": "/Game/Characters/Customuse/KnightB/v029/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": true,
+      "damageWindows": [],
+      "nominalSpeed": 453.3999938964844,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 120.0,
+      "rootSamples": 78,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Knight_StrafeRunLeftTwoHand_v6r.glb",
+      "approvedSourceSHA256": "6e44324bcba2f872d3b9e63fc43593f2a5c448e1a77c0bc5b05e68eca77deec5"
+    },
+    "StrafeRight": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v030q/Animations/StrafeRight/Knight_StrafeRight_v5c.Knight_StrafeRight_v5c",
+      "playLength": 1.1333333253860474,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v029/MeshVariants/knight_571e0abbfde2720e/Sourced_BlinkRight_Transit_v2.Sourced_BlinkRight_Transit_v2",
+      "weapon": "/Game/Characters/Customuse/KnightB/v029/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": true,
+      "damageWindows": [],
+      "nominalSpeed": 159.6999969482422,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 120.0,
+      "rootSamples": 137,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Knight_StrafeRight_v5c.glb",
+      "approvedSourceSHA256": "24097224e74934b6ad0b59c5c7019aa63ac42a32d0f7c0549c17b035b249e915"
+    },
+    "StrafeRunRight": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v030s/Animations/StrafeRunRight/Knight_StrafeRunRight_v6r.Knight_StrafeRunRight_v6r",
+      "playLength": 0.6333333253860474,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v029/MeshVariants/knight_571e0abbfde2720e/Sourced_BlinkRight_Transit_v2.Sourced_BlinkRight_Transit_v2",
+      "weapon": "/Game/Characters/Customuse/KnightB/v029/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": true,
+      "damageWindows": [],
+      "nominalSpeed": 456.8999938964844,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 120.0,
+      "rootSamples": 77,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Knight_StrafeRunRight_v6r.glb",
+      "approvedSourceSHA256": "246a9545f7a7e050082ba4b47cd74bca571a6695556b9f01737f8924cba6c299"
+    },
+    "StrafeRightTwoHand": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v030q/Animations/StrafeRightTwoHand/Knight_StrafeRightTwoHand_v5c.Knight_StrafeRightTwoHand_v5c",
+      "playLength": 1.1333333253860474,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v029/MeshVariants/knight_571e0abbfde2720e/Sourced_BlinkRight_Transit_v2.Sourced_BlinkRight_Transit_v2",
+      "weapon": "/Game/Characters/Customuse/KnightB/v029/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": true,
+      "damageWindows": [],
+      "nominalSpeed": 159.6999969482422,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 120.0,
+      "rootSamples": 137,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Knight_StrafeRightTwoHand_v5c.glb",
+      "approvedSourceSHA256": "f002b23e7f3e82221049925ba3864b4336e2eb94761d3be1d071717ccf128870"
+    },
+    "StrafeRunRightTwoHand": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v030s/Animations/StrafeRunRightTwoHand/Knight_StrafeRunRightTwoHand_v6r.Knight_StrafeRunRightTwoHand_v6r",
+      "playLength": 0.6333333253860474,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v029/MeshVariants/knight_571e0abbfde2720e/Sourced_BlinkRight_Transit_v2.Sourced_BlinkRight_Transit_v2",
+      "weapon": "/Game/Characters/Customuse/KnightB/v029/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": true,
+      "damageWindows": [],
+      "nominalSpeed": 456.8999938964844,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 120.0,
+      "rootSamples": 77,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Knight_StrafeRunRightTwoHand_v6r.glb",
+      "approvedSourceSHA256": "d6aa2d6a379ffa03ae002592a1f3695ce66ec6cbe880b8586f820c2c5e718976"
+    },
+    "StaggerFront": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v030p/Animations/StaggerFront/Knight_StaggerFront_v4.Knight_StaggerFront_v4",
+      "playLength": 0.699999988079071,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v029/MeshVariants/knight_571e0abbfde2720e/Sourced_BlinkRight_Transit_v2.Sourced_BlinkRight_Transit_v2",
+      "weapon": "/Game/Characters/Customuse/KnightB/v029/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.166700005531311,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 120.0,
+      "rootSamples": 85,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Knight_StaggerFront_v4.glb",
+      "approvedSourceSHA256": "37f8cb3fd97862b58b04ed6d957a49fc29f1bdbc4198d884930512f5fb8b65f6"
+    },
+    "StaggerFrontTwoHand": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v030p/Animations/StaggerFrontTwoHand/Knight_StaggerFrontTwoHand_v4.Knight_StaggerFrontTwoHand_v4",
+      "playLength": 0.699999988079071,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v029/MeshVariants/knight_571e0abbfde2720e/Sourced_BlinkRight_Transit_v2.Sourced_BlinkRight_Transit_v2",
+      "weapon": "/Game/Characters/Customuse/KnightB/v029/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.166700005531311,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 120.0,
+      "rootSamples": 85,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Knight_StaggerFrontTwoHand_v4.glb",
+      "approvedSourceSHA256": "9a4c9988921311396a7e3829c1f04cb5f1871b437058682d1c70265ddd0f4f71"
+    },
+    "StaggerBack": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v030p/Animations/StaggerBack/Knight_StaggerBack_v4.Knight_StaggerBack_v4",
+      "playLength": 0.9666666388511658,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v029/MeshVariants/knight_571e0abbfde2720e/Sourced_BlinkRight_Transit_v2.Sourced_BlinkRight_Transit_v2",
+      "weapon": "/Game/Characters/Customuse/KnightB/v029/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.6110999584197998,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 120.0,
+      "rootSamples": 117,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Knight_StaggerBack_v4.glb",
+      "approvedSourceSHA256": "5866f4e56000a8608ad12bece3d32113401665dbad7d3ec712517c170082e405"
+    },
+    "StaggerBackTwoHand": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v030p/Animations/StaggerBackTwoHand/Knight_StaggerBackTwoHand_v4.Knight_StaggerBackTwoHand_v4",
+      "playLength": 0.9666666388511658,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v029/MeshVariants/knight_571e0abbfde2720e/Sourced_BlinkRight_Transit_v2.Sourced_BlinkRight_Transit_v2",
+      "weapon": "/Game/Characters/Customuse/KnightB/v029/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.6110999584197998,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 120.0,
+      "rootSamples": 117,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Knight_StaggerBackTwoHand_v4.glb",
+      "approvedSourceSHA256": "996605d1ea0a555060d907c5c7a300ffb3e6eb13f5437c2e334618f60ccc80fc"
+    },
+    "StaggerLeft": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v030p/Animations/StaggerLeft/Knight_StaggerLeft_v4.Knight_StaggerLeft_v4",
+      "playLength": 0.699999988079071,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v029/MeshVariants/knight_571e0abbfde2720e/Sourced_BlinkRight_Transit_v2.Sourced_BlinkRight_Transit_v2",
+      "weapon": "/Game/Characters/Customuse/KnightB/v029/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.166700005531311,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 120.0,
+      "rootSamples": 85,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Knight_StaggerLeft_v4.glb",
+      "approvedSourceSHA256": "af4fb938a3da07eaaf51394dac1468e1c37c7193c6bb9ae1d4e03501a30a9e34"
+    },
+    "StaggerLeftTwoHand": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v030p/Animations/StaggerLeftTwoHand/Knight_StaggerLeftTwoHand_v4.Knight_StaggerLeftTwoHand_v4",
+      "playLength": 0.699999988079071,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v029/MeshVariants/knight_571e0abbfde2720e/Sourced_BlinkRight_Transit_v2.Sourced_BlinkRight_Transit_v2",
+      "weapon": "/Game/Characters/Customuse/KnightB/v029/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.166700005531311,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 120.0,
+      "rootSamples": 85,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Knight_StaggerLeftTwoHand_v4.glb",
+      "approvedSourceSHA256": "f82ca79d46b57631e94fe69f66efe25ff02f3c3b858e56f0ca19f1f84993b116"
+    },
+    "StaggerRight": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v030p/Animations/StaggerRight/Knight_StaggerRight_v4.Knight_StaggerRight_v4",
+      "playLength": 0.699999988079071,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v029/MeshVariants/knight_571e0abbfde2720e/Sourced_BlinkRight_Transit_v2.Sourced_BlinkRight_Transit_v2",
+      "weapon": "/Game/Characters/Customuse/KnightB/v029/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.166700005531311,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 120.0,
+      "rootSamples": 85,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Knight_StaggerRight_v4.glb",
+      "approvedSourceSHA256": "1976030698320c9c569a7c71e6d6ee6eb046d60a1b41a6d20c225f80d5163b69"
+    },
+    "StaggerRightTwoHand": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v030p/Animations/StaggerRightTwoHand/Knight_StaggerRightTwoHand_v4.Knight_StaggerRightTwoHand_v4",
+      "playLength": 0.699999988079071,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v029/MeshVariants/knight_571e0abbfde2720e/Sourced_BlinkRight_Transit_v2.Sourced_BlinkRight_Transit_v2",
+      "weapon": "/Game/Characters/Customuse/KnightB/v029/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.166700005531311,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 120.0,
+      "rootSamples": 85,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Knight_StaggerRightTwoHand_v4.glb",
+      "approvedSourceSHA256": "afe5a0aa985815bdeed86a4035539ff87dc17dc7bd503ef3d34208ff60b83685"
+    },
+    "BackpedalGuard": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v030q/Animations/BackpedalGuard/Knight_BackpedalGuard_v5c.Knight_BackpedalGuard_v5c",
+      "playLength": 1.2000000476837158,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v029/MeshVariants/knight_571e0abbfde2720e/Sourced_BlinkRight_Transit_v2.Sourced_BlinkRight_Transit_v2",
+      "weapon": "/Game/Characters/Customuse/KnightB/v029/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": true,
+      "damageWindows": [],
+      "nominalSpeed": 59.95000076293945,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 119.99999237060547,
+      "rootSamples": 145,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Knight_BackpedalGuard_v5c.glb",
+      "approvedSourceSHA256": "3eab9ce3f3f172be7482915d41736544f720743953183baf165152e0322bac7e"
+    },
+    "BackpedalGuardTwoHand": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v030q/Animations/BackpedalGuardTwoHand/Knight_BackpedalGuardTwoHand_v5c.Knight_BackpedalGuardTwoHand_v5c",
+      "playLength": 1.2000000476837158,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v029/MeshVariants/knight_571e0abbfde2720e/Sourced_BlinkRight_Transit_v2.Sourced_BlinkRight_Transit_v2",
+      "weapon": "/Game/Characters/Customuse/KnightB/v029/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.0,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": true,
+      "damageWindows": [],
+      "nominalSpeed": 59.95000076293945,
+      "rootMotionRemoved": false,
+      "rootSampleRate": 119.99999237060547,
+      "rootSamples": 145,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Knight_BackpedalGuardTwoHand_v5c.glb",
+      "approvedSourceSHA256": "1a1f33ff1e326bbc9a7c56473bf3d77e4119dac44caf4c6befdcd4921313ee8a"
+    },
+    "BlinkLeftTwoHand": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v030s/Animations/BlinkLeftTwoHand/Knight_BlinkLeftTwoHand_v7c.Knight_BlinkLeftTwoHand_v7c",
+      "playLength": 0.699999988079071,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v029/MeshVariants/knight_571e0abbfde2720e/Sourced_BlinkRight_Transit_v2.Sourced_BlinkRight_Transit_v2",
+      "weapon": "/Game/Characters/Customuse/KnightB/v029/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.149999976158142,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": true,
+      "rootSampleRate": 120.0,
+      "rootSamples": 85,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          122.3,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Knight_BlinkLeftTwoHand_v7c.glb",
+      "approvedSourceSHA256": "0de5e2e0f9af91ce14775b4772eff2979f56a84f6ff3d02d9bdeebaf36d40cf4"
+    },
+    "BlinkRightTwoHand": {
+      "sequence": "/Game/Characters/Customuse/KnightB/v030s/Animations/BlinkRightTwoHand/Knight_BlinkRightTwoHand_v7c.Knight_BlinkRightTwoHand_v7c",
+      "playLength": 0.699999988079071,
+      "meshOverride": "/Game/Characters/Customuse/KnightB/v029/MeshVariants/knight_571e0abbfde2720e/Sourced_BlinkRight_Transit_v2.Sourced_BlinkRight_Transit_v2",
+      "weapon": "/Game/Characters/Customuse/KnightB/v029/Props/BoatGreatsword_OneHand_v4/BoatGreatsword_OneHand_v4.BoatGreatsword_OneHand_v4",
+      "gameplayPlayRate": 1.149999976158142,
+      "start": 0.0,
+      "end": -1.0,
+      "impact": -1.0,
+      "loop": false,
+      "damageWindows": [],
+      "nominalSpeed": 0.0,
+      "rootMotionRemoved": true,
+      "rootSampleRate": 120.0,
+      "rootSamples": 85,
+      "rootFirstLast": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          -122.3,
+          0.0,
+          0.0
+        ]
+      ],
+      "approvedSourceFile": "Knight_BlinkRightTwoHand_v7c.glb",
+      "approvedSourceSHA256": "f02f2ac5a525ec4bd8ade9672e53c56907dd6bb1d9672f4aeedeb5af1dc64d84"
+    }
+  }
+}

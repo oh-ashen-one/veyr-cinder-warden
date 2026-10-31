@@ -521,8 +521,17 @@ bool AVeyrKnight::StartPrimaryStep(int32 Step)
     if(Heavy)++HeavyAttacks;else ++LightAttacks;
     ActionSwingBase=Two?PrimarySwingBase:PrimarySwingBase+Step;
     bStartingPrimaryStep=true;
-    const float Starts[]={0.f,.65f,1.40f};
-    const float Ends[]={.65f,1.40f,VisualClipDuration(TEXT("LightCombo"),3.32f)*VisualClipPlayRate(TEXT("LightCombo"))};
+    // Two-hand chain segments begin a fixed wind-up lead before swings 2 and 3 (v5: .65/1.40 s = window starts
+    // .7667/1.60 minus .117/.20 s). Derived from the clip's own damage windows so a retimed LightCombo (A1, v030t:
+    // .625/1.35 s) keeps every strike inside its segment; legacy constants without three windows.
+    float Starts[]={0.f,.65f,1.40f};
+    if(const FVeyrVisualClip* Combo=CustomuseVisualDefinition?CustomuseVisualDefinition->Clips.Find(TEXT("LightCombo")):nullptr)
+        if(Combo->DamageWindows.Num()==3)
+        {
+            Starts[1]=static_cast<float>(FMath::Max(Combo->DamageWindows[0].Y,Combo->DamageWindows[1].X-.1167));
+            Starts[2]=static_cast<float>(FMath::Max(Combo->DamageWindows[1].Y,Combo->DamageWindows[2].X-.20));
+        }
+    const float Ends[]={Starts[1],Starts[2],VisualClipDuration(TEXT("LightCombo"),3.32f)*VisualClipPlayRate(TEXT("LightCombo"))};
     const float Duration=Two?(Ends[Step]-Starts[Step])/VisualClipPlayRate(TEXT("LightCombo")):GetAttackDuration(Heavy);
     BeginAction(Two?EVeyrKnightAction::Combo:Heavy?EVeyrKnightAction::HeavyAttack:EVeyrKnightAction::LightAttack,Duration);
     bStartingPrimaryStep=false;bPrimaryChainActive=true;bPrimaryAttackBuffered=false;PrimaryChainStep=Step;

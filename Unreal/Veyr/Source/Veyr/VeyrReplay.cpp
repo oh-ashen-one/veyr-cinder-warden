@@ -1066,7 +1066,13 @@ bool AVeyrReplay::DriveIntegrationInputs()
     {
         const float Travel=FVector::Dist2D(Feet,IntegrationOrigin);
         if(Primary)Knight->ReleasePrimaryAttack();
-        const bool PrimaryComplete=!Primary||(Knight->LightAttacks==IntegrationLightBefore+2&&Knight->HeavyAttacks==IntegrationHeavyBefore+1&&(!Trial.Two||IntegrationMaximumSourceTime>3.f));
+        // The two-hand chain must play into its last segment: 3.0 of the 3.32 s v5 LightCombo, scaled to the
+        // authored source length so the retimed A1 LightCombo (2.908 s, v030t) is held to the same fraction.
+        const FVeyrVisualClip* ComboClip=Knight->CustomuseVisualDefinition?Knight->CustomuseVisualDefinition->Clips.Find(TEXT("LightCombo")):nullptr;
+        const float ComboSourceSeconds=AuthoredKnightSeconds(TEXT("LightCombo"),3.32f)*(ComboClip?FMath::Clamp(ComboClip->GameplayPlayRate,.1f,4.f):1.f);
+        const float ChainSourceRequired=ComboSourceSeconds*(3.f/3.32f);
+        IntegrationTrial->SetNumberField(TEXT("primaryChainSourceRequired"),ChainSourceRequired);
+        const bool PrimaryComplete=!Primary||(Knight->LightAttacks==IntegrationLightBefore+2&&Knight->HeavyAttacks==IntegrationHeavyBefore+1&&(!Trial.Two||IntegrationMaximumSourceTime>ChainSourceRequired));
         // Blink hidden window: the knight's own action-clock record is the assertion. The frame probe (a rendered frame
         // inside the 0.16 s window and a visible afterimage) is secondary: missing it only warns when the longest frame
         // of the blink exceeded the window; with short frames a missing probe still fails.
