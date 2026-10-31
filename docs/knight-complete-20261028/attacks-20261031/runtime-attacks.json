@@ -1,0 +1,190 @@
+{
+ "date": "2026-10-31",
+ "branch": "fable/knight-complete-20261028",
+ "question": "Which GLB does each runtime attack clip play in game (RuntimePolish/DA_Knight, after v030s)?",
+ "method": [
+  "Read the native definition: strings of Unreal/Veyr/Content/Characters/Customuse/RuntimePolish/DA_Knight.uasset (git-ignored Content, on disk) give the exact /Game/.../Animations/<Clip>/<Sequence> paths. No Unreal was launched.",
+  "Matched each sequence to its normalized GLB through the version chain of import plans: v026 (idle-joins, 8 attack clips) -> v027 (sourced-v027b, replaces LightAttack) -> v028/v029 (blinks only) -> v030k..v030s (docs/knight-complete-20261028/data/import-plan-KnightB-*.json; only RollAttack of the attack family changes, v030s = Sourced_RollAttack_v7).",
+  "Rates, damage windows and durations are from the plan and the GLB itself. The binary DA was not parsed for the play-rate floats, so rates are plan values (a native override would show in the v030s activation 'gameplayPlayRate'; none exists for these clips)."
+ ],
+ "caveats": [
+  "The v026 plan stores GLB paths under Polish20261025/idle-joins/knight/, which no longer exists; the same normalized files live in Polish20261025/knight/ (plan sha256 matches the files there).",
+  "Native uassets cannot be hashed against the GLBs here; the sha links are plan sha256 == disk and plan approved_source_sha256 == owner-approved sha.",
+  "RuntimePolish/DA_Knight also lists RollAttack (Sourced_RollAttack_v7, owner_approved false). It is not part of the list asked for; recorded below for completeness."
+ ],
+ "clips": [
+  {
+   "clip": "LightAttack",
+   "glb": "Local/CustomuseAssets/Sourced20261025b/knight/Mixamo_Attack_v17.glb",
+   "glbDurationSeconds": 1.5,
+   "gameplayPlayRate": 1.6,
+   "damageWindowsClipSeconds": [
+    [
+     0.45,
+     0.72
+    ]
+   ],
+   "nativeSequence": "/Game/Characters/Customuse/KnightB/v027/Animations/LightAttack/Mixamo_Attack_v17",
+   "ownerApproved": true,
+   "mappingConfidence": "confirmed",
+   "evidence": {
+    "nativeDefinition": "strings of Unreal/Veyr/Content/Characters/Customuse/RuntimePolish/DA_Knight.uasset (the runtime DA) contain the sequence reference below; v030s/DA_KnightB.uasset (the last activated definition, which inherits RuntimePolish/DA_Knight) lists the same path: /Game/Characters/Customuse/KnightB/v027/Animations/LightAttack/Mixamo_Attack_v17",
+    "importPlan": "Local/CustomuseAssets/Polish20261025/sourced-v027b/import-plan-KnightB.json (v027, owner_approved true): LightAttack = Mixamo_Attack_v17.glb, rate 1.6, damage window 0.45-0.72, impact 0.585; replaces the v026 LightAttack (LightAttack_BlackKnightReference_Blender_v2r3, rate 3.0). v028..v030s plans contain no LightAttack, so v027 stands.",
+    "ownerApproval": "docs/sourced-native-20261025/README.md and source-manifest.json: 'Owner approved walk, slash, run and roll'; v027 plan owner_approved true. Source motion: Local/FabRigTesting/Source/Mixamo/sword and shield slash.fbx (Mixamo, retargeted + weapon-fitted with a hand-fitted blade arc, Exports/Mixamo_Attack_v17.json). The earlier owner-approved Blender overhead LightAttack_BlackKnightReference_Blender_v2r3 is NOT the runtime clip any more.",
+    "note": "Unreal ChooseAttackClip(false) returns LightAttack one-handed; AVeyrKnight::StartPrimaryStep (VeyrKnight.cpp, committed HEAD) plays the one-hand primary chain as LightAttack, LightAttack, then HeavyAttack (step 3), and plays the single 'LightCombo' clip only two-handed (`Two&&!HasVisualClip(LightCombo)`); docs/sourced-native-20261025/README.md says the same ('normal one-hand primary chain uses the new slash for steps 1/2'). VeyrKnight.cpp has uncommitted changes from another session in the working tree; this mapping reads the committed version."
+   }
+  },
+  {
+   "clip": "LightAttackTwoHand",
+   "glb": "Local/CustomuseAssets/Polish20261025/knight/LightAttackTwoHand_Compact_Blender_v2r3.glb",
+   "glbDurationSeconds": 1.2,
+   "gameplayPlayRate": 1.0,
+   "damageWindowsClipSeconds": [
+    [
+     0.35,
+     0.56
+    ]
+   ],
+   "nativeSequence": "/Game/Characters/Customuse/KnightB/v026/Animations/LightAttackTwoHand/LightAttackTwoHand_Compact_Blender_v2r3",
+   "ownerApproved": true,
+   "mappingConfidence": "confirmed",
+   "evidence": {
+    "nativeDefinition": "strings of Unreal/Veyr/Content/Characters/Customuse/RuntimePolish/DA_Knight.uasset (the runtime DA) contain the sequence reference below; v030s/DA_KnightB.uasset (the last activated definition, which inherits RuntimePolish/DA_Knight) lists the same path: /Game/Characters/Customuse/KnightB/v026/Animations/LightAttackTwoHand/LightAttackTwoHand_Compact_Blender_v2r3",
+    "importPlan": "v026 plan Local/CustomuseAssets/Polish20261025/idle-joins/import-plan-KnightB.json (clip LightAttackTwoHand, rate 1.0); not replaced by any later plan (v027-v030s) and listed in the v030s activation preservedClips (docs/knight-complete-20261028/data/knight-v030s-activation.json).",
+    "ownerApproval": "approved_source_sha256 3dab85375eb6... equals the owner-approved sha in tools/art/integration/owner-approvals-20261025.json ('Compact light B', ownerApproved true, 2026-10-25); also in tools/art/blender/feedback/decisions.json approved list (2026-10-21)."
+   }
+  },
+  {
+   "clip": "HeavyAttack",
+   "glb": "Local/CustomuseAssets/Polish20261025/knight/HeavyAttackOneHand_Blender_v4r5.glb",
+   "glbDurationSeconds": 1.4,
+   "gameplayPlayRate": 1.0,
+   "damageWindowsClipSeconds": [
+    [
+     0.52,
+     0.94
+    ]
+   ],
+   "nativeSequence": "/Game/Characters/Customuse/KnightB/v026/Animations/HeavyAttack/HeavyAttackOneHand_Blender_v4r5",
+   "ownerApproved": true,
+   "mappingConfidence": "confirmed",
+   "evidence": {
+    "nativeDefinition": "strings of Unreal/Veyr/Content/Characters/Customuse/RuntimePolish/DA_Knight.uasset (the runtime DA) contain the sequence reference below; v030s/DA_KnightB.uasset (the last activated definition, which inherits RuntimePolish/DA_Knight) lists the same path: /Game/Characters/Customuse/KnightB/v026/Animations/HeavyAttack/HeavyAttackOneHand_Blender_v4r5",
+    "importPlan": "v026 plan Local/CustomuseAssets/Polish20261025/idle-joins/import-plan-KnightB.json (rate 1.0); preserved through v030s. DA strings contain HeavyAttackOneHand_Blender_v4r5 (and the .glb source name).",
+    "ownerApproval": "sha c49935418de2... in tools/art/integration/owner-approvals-20261025.json ('Heavy attack one hand B v4 round 5', ownerApproved true); also in tools/art/blender/feedback/decisions.json."
+   }
+  },
+  {
+   "clip": "HeavyAttackAlternate",
+   "glb": "Local/CustomuseAssets/Polish20261025/knight/HeavyAttackOneHand_Blender_v4r3.glb",
+   "glbDurationSeconds": 1.4,
+   "gameplayPlayRate": 1.0,
+   "damageWindowsClipSeconds": [
+    [
+     0.52,
+     0.94
+    ]
+   ],
+   "nativeSequence": "/Game/Characters/Customuse/KnightB/v026/Animations/HeavyAttackAlternate/HeavyAttackOneHand_Blender_v4r3",
+   "ownerApproved": true,
+   "mappingConfidence": "confirmed",
+   "evidence": {
+    "nativeDefinition": "strings of Unreal/Veyr/Content/Characters/Customuse/RuntimePolish/DA_Knight.uasset (the runtime DA) contain the sequence reference below; v030s/DA_KnightB.uasset (the last activated definition, which inherits RuntimePolish/DA_Knight) lists the same path: /Game/Characters/Customuse/KnightB/v026/Animations/HeavyAttackAlternate/HeavyAttackOneHand_Blender_v4r3",
+    "importPlan": "v026 plan (rate 1.0); preserved through v030s. DA strings contain HeavyAttackOneHand_Blender_v4r3; the v026 MeshVariants entry knight_6d3b4c55bd8c3fa0/HeavyAttackOneHand_Blender_v4r3 is the runtime mesh override.",
+    "ownerApproval": "sha 9acff6fe597b... in tools/art/integration/owner-approvals-20261025.json ('Heavy attack one hand A v4 round 3', ownerApproved true); also in tools/art/blender/feedback/decisions.json."
+   }
+  },
+  {
+   "clip": "HeavyAttackTwoHand",
+   "glb": "Local/CustomuseAssets/Polish20261025/knight/StrongAttackTwoHand_Sweep_Blender_v2r3.glb",
+   "glbDurationSeconds": 1.613,
+   "gameplayPlayRate": 1.0,
+   "damageWindowsClipSeconds": [
+    [
+     0.43,
+     0.74
+    ]
+   ],
+   "nativeSequence": "/Game/Characters/Customuse/KnightB/v026/Animations/HeavyAttackTwoHand/StrongAttackTwoHand_Sweep_Blender_v2r3",
+   "ownerApproved": true,
+   "mappingConfidence": "confirmed",
+   "evidence": {
+    "nativeDefinition": "strings of Unreal/Veyr/Content/Characters/Customuse/RuntimePolish/DA_Knight.uasset (the runtime DA) contain the sequence reference below; v030s/DA_KnightB.uasset (the last activated definition, which inherits RuntimePolish/DA_Knight) lists the same path: /Game/Characters/Customuse/KnightB/v026/Animations/HeavyAttackTwoHand/StrongAttackTwoHand_Sweep_Blender_v2r3",
+    "importPlan": "v026 plan (rate 1.0); preserved through v030s.",
+    "ownerApproval": "sha 9a80d30a24d1... in tools/art/integration/owner-approvals-20261025.json ('Strong sweep B v2r3', ownerApproved true); also in tools/art/blender/feedback/decisions.json."
+   }
+  },
+  {
+   "clip": "HeavyAttackTwoHandAlternate",
+   "glb": "Local/CustomuseAssets/Polish20261025/knight/StrongAttackTwoHand_Thrust_Blender_v2r4.glb",
+   "glbDurationSeconds": 2.307,
+   "gameplayPlayRate": 1.0,
+   "damageWindowsClipSeconds": [
+    [
+     0.7,
+     0.98
+    ]
+   ],
+   "nativeSequence": "/Game/Characters/Customuse/KnightB/v026/Animations/HeavyAttackTwoHandAlternate/StrongAttackTwoHand_Thrust_Blender_v2r4",
+   "ownerApproved": true,
+   "mappingConfidence": "confirmed",
+   "evidence": {
+    "nativeDefinition": "strings of Unreal/Veyr/Content/Characters/Customuse/RuntimePolish/DA_Knight.uasset (the runtime DA) contain the sequence reference below; v030s/DA_KnightB.uasset (the last activated definition, which inherits RuntimePolish/DA_Knight) lists the same path: /Game/Characters/Customuse/KnightB/v026/Animations/HeavyAttackTwoHandAlternate/StrongAttackTwoHand_Thrust_Blender_v2r4",
+    "importPlan": "v026 plan (rate 1.0); preserved through v030s.",
+    "ownerApproval": "sha 6f8f5af34c78... in tools/art/integration/owner-approvals-20261025.json ('Strong thrust B v2r4', ownerApproved true); also in tools/art/blender/feedback/decisions.json."
+   }
+  },
+  {
+   "clip": "LightCombo",
+   "glb": "Local/CustomuseAssets/Polish20261025/knight/LightCombo_Blender_v5.glb",
+   "glbDurationSeconds": 3.32,
+   "gameplayPlayRate": 1.0,
+   "damageWindowsClipSeconds": [
+    [
+     0.3,
+     0.5
+    ],
+    [
+     0.7667,
+     1.0333
+    ],
+    [
+     1.6,
+     1.9633
+    ]
+   ],
+   "nativeSequence": "/Game/Characters/Customuse/KnightB/v026/Animations/LightCombo/LightCombo_Blender_v5",
+   "ownerApproved": true,
+   "mappingConfidence": "confirmed",
+   "evidence": {
+    "nativeDefinition": "strings of Unreal/Veyr/Content/Characters/Customuse/RuntimePolish/DA_Knight.uasset (the runtime DA) contain the sequence reference below; v030s/DA_KnightB.uasset (the last activated definition, which inherits RuntimePolish/DA_Knight) lists the same path: /Game/Characters/Customuse/KnightB/v026/Animations/LightCombo/LightCombo_Blender_v5",
+    "importPlan": "v026 plan (rate 1.0, three damage windows); preserved through v030s. VeyrKnight.cpp plays it for Combo action and the two-handed primary chain only.",
+    "ownerApproval": "sha bc17c661a2ef... in tools/art/integration/owner-approvals-20261025.json ('NEW Light-light-heavy combo v5', ownerApproved true); also in tools/art/blender/feedback/decisions.json."
+   }
+  }
+ ],
+ "alsoRuntime": [
+  {
+   "clip": "RollAttack",
+   "glb": "Local/CustomuseAssets/Knight20261030r5/knight/Sourced_RollAttack_v7.glb",
+   "gameplayPlayRate": 1.2820512820512822,
+   "damageWindowsClipSeconds": [
+    [
+     1.36,
+     1.576
+    ]
+   ],
+   "nativeSequence": "/Game/Characters/Customuse/KnightB/v030s/Animations/RollAttack/Sourced_RollAttack_v7",
+   "ownerApproved": false,
+   "evidence": "v030s plan owner_approved false; round-5 critique SHIPPABLE with notes, waiting for owner (HANDOFF.md running state)."
+  }
+ ],
+ "supersededNotRuntime": [
+  {
+   "glb": "Local/CustomuseAssets/Polish20261025/knight/LightAttack_BlackKnightReference_Blender_v2r3.glb",
+   "was": "LightAttack in v026 (rate 3.0)",
+   "replacedBy": "Mixamo_Attack_v17 in v027"
+  }
+ ],
+ "uncertain": []
+}
