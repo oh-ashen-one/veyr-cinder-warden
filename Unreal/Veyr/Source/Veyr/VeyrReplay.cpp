@@ -994,10 +994,13 @@ bool AVeyrReplay::DriveIntegrationInputs()
         // Primary chains are stationary for their whole length (1H: light+light+heavy, 3.95 s with the A1 clips of
         // v030t, was 3.28 s); start them in a predicted safe window that covers the chain, as the heal trials do.
         // Bounded: after 15 s of waiting in this trial the input is issued anyway (the 40 s trial timeout stays).
+        // SafeStationarySeconds does not model where FlyAway lands (it read 8-9 s during FlyAway wind-ups that then
+        // landed on the chain), so a FlyAway wind-up/flight also waits.
         if(Trial.Kind==EExercise::Primary&&Elapsed-IntegrationStageStarted<15.f)
         {
             const float ChainSeconds=Trial.Two?AuthoredKnightSeconds(TEXT("LightCombo"),3.32f):2.f*Knight->GetAttackDuration(false)+Knight->GetAttackDuration(true);
-            if(SafeStationarySeconds(Feet)<ChainSeconds)return true;
+            const bool FlyAwayPending=Dragon->Move==EVeyrDragonMove::FlyAway&&(Dragon->State==EVeyrDragonState::Windup||Dragon->State==EVeyrDragonState::Active);
+            if(FlyAwayPending||SafeStationarySeconds(Feet)<ChainSeconds)return true;
             IntegrationTrial->SetNumberField(TEXT("primaryChainSafeWindowSeconds"),ChainSeconds);
         }
         IntegrationOrigin=Feet;IntegrationRequestedAt=Elapsed;IntegrationContactsBefore=Dragon->GetSwordContactCount();IntegrationHitsBefore=Knight->HitsTaken;
