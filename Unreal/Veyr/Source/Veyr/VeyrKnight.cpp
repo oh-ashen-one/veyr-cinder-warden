@@ -122,14 +122,16 @@ AVeyrKnight::AVeyrKnight()
     static ConstructorHelpers::FObjectFinderOptional<UMaterialInterface> EchoMaterial(
         TEXT("/Game/ArtPass/Materials/M_BlinkAfterimage.M_BlinkAfterimage"),LOAD_Quiet|LOAD_NoWarn);
     BlinkEchoMaterial=EchoMaterial.Get();
-    for(int32 I=0;I<2;++I)
+    static const TCHAR* EchoNames[BlinkEchoCount]={TEXT("Blink departure"),TEXT("Blink arrival"),TEXT("Blink shade"),
+        TEXT("Blink trail 1"),TEXT("Blink trail 2"),TEXT("Blink trail 3"),TEXT("Blink trail 4")};
+    for(int32 I=0;I<BlinkEchoCount;++I)
     {
-        auto* Echo=CreateDefaultSubobject<UPoseableMeshComponent>(I==0?TEXT("Blink departure silhouette"):TEXT("Blink arrival silhouette"));
+        auto* Echo=CreateDefaultSubobject<UPoseableMeshComponent>(*(FString(EchoNames[I])+TEXT(" silhouette")));
         Echo->SetupAttachment(GetCapsuleComponent());Echo->SetAbsolute(true,true,true);
         Echo->SetCollisionEnabled(ECollisionEnabled::NoCollision);Echo->SetGenerateOverlapEvents(false);
         Echo->SetCanEverAffectNavigation(false);Echo->SetVisibility(false);Echo->CastShadow=false;
         BlinkEchoBodies.Add(Echo);
-        auto* WeaponEcho=CreateDefaultSubobject<UStaticMeshComponent>(I==0?TEXT("Blink departure sword"):TEXT("Blink arrival sword"));
+        auto* WeaponEcho=CreateDefaultSubobject<UStaticMeshComponent>(*(FString(EchoNames[I])+TEXT(" sword")));
         WeaponEcho->SetupAttachment(GetCapsuleComponent());WeaponEcho->SetAbsolute(true,true,true);
         WeaponEcho->SetCollisionEnabled(ECollisionEnabled::NoCollision);WeaponEcho->SetGenerateOverlapEvents(false);
         WeaponEcho->SetCanEverAffectNavigation(false);WeaponEcho->SetVisibility(false);WeaponEcho->CastShadow=false;
@@ -1219,14 +1221,14 @@ FVector AVeyrKnight::RootTranslationAt(float Seconds) const
 }
 void AVeyrKnight::ClearBlinkEchoes()
 {
-    for(int32 I=0;I<2;++I)
+    for(int32 I=0;I<BlinkEchoCount;++I)
     {
         bBlinkEchoCaptured[I]=false;
         if(BlinkEchoBodies.IsValidIndex(I))BlinkEchoBodies[I]->SetVisibility(false);
         if(BlinkEchoWeapons.IsValidIndex(I))BlinkEchoWeapons[I]->SetVisibility(false);
     }
 }
-bool AVeyrKnight::CaptureBlinkEcho(int32 Index,float SourceSeconds)
+bool AVeyrKnight::CaptureBlinkEcho(int32 Index,float SourceSeconds,const FLinearColor& Tint,float Opacity,bool bCountEvidence)
 {
     if(!ImportedPresentation||!ImportedPresentation->GetSkeletalMeshAsset()||!CustomuseVisualDefinition)return false;
     if(!BlinkEchoMaterial)BlinkEchoMaterial=LoadObject<UMaterialInterface>(nullptr,TEXT("/Game/ArtPass/Materials/M_BlinkAfterimage.M_BlinkAfterimage"),nullptr,LOAD_Quiet|LOAD_NoWarn);
@@ -1250,10 +1252,10 @@ bool AVeyrKnight::CaptureBlinkEcho(int32 Index,float SourceSeconds)
     auto* Material=BlinkEchoMaterials[Index].Get();
     for(int32 Slot=0;Slot<Echo->GetNumMaterials();++Slot)Echo->SetMaterial(Slot,Material);
     for(int32 Slot=0;Slot<WeaponEcho->GetNumMaterials();++Slot)WeaponEcho->SetMaterial(Slot,Material);
-    Material->SetVectorParameterValue(TEXT("Tint"),FLinearColor(.08f,.32f,.55f));
-    Material->SetScalarParameterValue(TEXT("Opacity"),Index==0?.14f:.10f);
+    Material->SetVectorParameterValue(TEXT("Tint"),Tint);
+    Material->SetScalarParameterValue(TEXT("Opacity"),Opacity);
     Echo->SetVisibility(true);WeaponEcho->SetVisibility(HasWeapon);
-    bBlinkEchoCaptured[Index]=true;BlinkEchoStarted[Index]=ActionElapsed;++BlinkEchoCaptures;
+    bBlinkEchoCaptured[Index]=true;BlinkEchoStarted[Index]=ActionElapsed;if(bCountEvidence)++BlinkEchoCaptures;
     const bool Restored=ImportedPresentation->SampleClipTimeBlended(ActionPresentationClip,RestoreSeconds,Alpha);
     BlinkVFXDiagnostic=Restored?FString():TEXT("Could not restore live pose after afterimage capture");
     return Restored;
@@ -1261,17 +1263,39 @@ bool AVeyrKnight::CaptureBlinkEcho(int32 Index,float SourceSeconds)
 void AVeyrKnight::UpdateBlinkEchoes()
 {
     if(!IsBlinkAction()||IsTerminal()){ClearBlinkEchoes();return;}
-    // Round 2: capture late if a long frame skipped the window (at ~12 fps the 0.12 s arrival window was missed);
-    // the echo still samples its authored source time, so normal-rate behaviour is unchanged.
-    if(!bBlinkEchoCaptured[0]&&ActionElapsed>=.16f)CaptureBlinkEcho(0,.16f);
-    if(!bBlinkEchoCaptured[1]&&ActionElapsed>=.34f)CaptureBlinkEcho(1,.34f);
-    for(int32 I=0;I<2;++I)
+    // Shadow dash (owner 2026-10-31: "teleport a little and you could see your shadow moving").
+    // The knight is hidden for .18-.34 s while the authored root carries it sideways. A dark shade copies the live pose
+    // and travels with it, still echoes drop along the path and fade, the departure shadow lingers and the arrival
+    // shadow overlays the knight as it solidifies. Late captures keep their authored source time (round-2 rule).
+    static const FLinearColor ShadeTint(.012f,.016f,.035f),TrailTint(.03f,.07f,.16f),EndTint(.02f,.03f,.07f);
+    constexpr float HiddenStart=.18f,HiddenEnd=.34f;
+    constexpr float DepartureOpacity=.42f,DepartureLife=.34f,ArrivalOpacity=.38f,ArrivalLife=.16f;
+    constexpr float ShadeOpacity=.62f,TrailOpacity=.30f,TrailLife=.24f;
+    static const float TrailTimes[BlinkEchoCount-BlinkEchoTrailFirst]={.205f,.245f,.285f,.325f};
+    if(!bBlinkEchoCaptured[0]&&ActionElapsed>=.16f)CaptureBlinkEcho(0,.16f,EndTint,DepartureOpacity,true);
+    for(int32 T=0;T<BlinkEchoCount-BlinkEchoTrailFirst;++T)
     {
-        if(!bBlinkEchoCaptured[I])continue;
-        const float Age=ActionElapsed-BlinkEchoStarted[I],Life=I==0?.20f:.09f;
+        const int32 I=BlinkEchoTrailFirst+T;
+        if(!bBlinkEchoCaptured[I]&&ActionElapsed>=TrailTimes[T]&&ActionElapsed<HiddenEnd+.05f)CaptureBlinkEcho(I,TrailTimes[T],TrailTint,TrailOpacity,false);
+    }
+    if(!bBlinkEchoCaptured[1]&&ActionElapsed>=HiddenEnd)CaptureBlinkEcho(1,HiddenEnd,EndTint,ArrivalOpacity,true);
+    const bool InTransit=ActionElapsed>=HiddenStart&&ActionElapsed<HiddenEnd;
+    if(InTransit)CaptureBlinkEcho(BlinkEchoShade,ActionElapsed,ShadeTint,ShadeOpacity,false);
+    else if(bBlinkEchoCaptured[BlinkEchoShade])
+    {
+        bBlinkEchoCaptured[BlinkEchoShade]=false;
+        BlinkEchoBodies[BlinkEchoShade]->SetVisibility(false);BlinkEchoWeapons[BlinkEchoShade]->SetVisibility(false);
+    }
+    for(int32 I=0;I<BlinkEchoCount;++I)
+    {
+        if(I==BlinkEchoShade||!bBlinkEchoCaptured[I])continue;
+        const bool Trail=I>=BlinkEchoTrailFirst;
+        const float Base=Trail?TrailOpacity:(I==0?DepartureOpacity:ArrivalOpacity),Life=Trail?TrailLife:(I==0?DepartureLife:ArrivalLife);
+        const float Age=ActionElapsed-BlinkEchoStarted[I];
         const bool Visible=Age<Life;
         BlinkEchoBodies[I]->SetVisibility(Visible);BlinkEchoWeapons[I]->SetVisibility(Visible);
-        if(BlinkEchoMaterials[I])BlinkEchoMaterials[I]->SetScalarParameterValue(TEXT("Opacity"),(I==0?.14f:.10f)*FMath::Clamp(1.f-Age/Life,0.f,1.f));
+        const float Fade=FMath::Clamp(1.f-Age/Life,0.f,1.f);
+        if(BlinkEchoMaterials[I])BlinkEchoMaterials[I]->SetScalarParameterValue(TEXT("Opacity"),Base*Fade*Fade);
     }
 }
 

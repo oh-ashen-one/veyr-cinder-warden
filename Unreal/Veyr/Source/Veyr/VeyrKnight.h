@@ -199,11 +199,14 @@ private:
     UPROPERTY() TArray<TObjectPtr<UStaticMeshComponent>> BlinkEchoWeapons;
     UPROPERTY() TArray<TObjectPtr<UMaterialInstanceDynamic>> BlinkEchoMaterials;
     UPROPERTY() TObjectPtr<UMaterialInterface> BlinkEchoMaterial;
-    bool bBlinkEchoCaptured[2]={false,false};
-    float BlinkEchoStarted[2]={0.f,0.f};
+    // Shadow-dash blink (owner 2026-10-31): 0 departure, 1 arrival, 2 live shade that travels while the knight is
+    // hidden, 3..6 trail stills dropped along the path.
+    static constexpr int32 BlinkEchoCount=7,BlinkEchoShade=2,BlinkEchoTrailFirst=3;
+    bool bBlinkEchoCaptured[BlinkEchoCount]={};
+    float BlinkEchoStarted[BlinkEchoCount]={};
     void ClearBlinkEchoes();
     void UpdateBlinkEchoes();
-    bool CaptureBlinkEcho(int32 Index,float SourceSeconds);
+    bool CaptureBlinkEcho(int32 Index,float SourceSeconds,const FLinearColor& Tint,float Opacity,bool bCountEvidence);
     FVector RootTranslationAt(float Seconds) const;
     UPROPERTY() TObjectPtr<USceneComponent> HealFlaskRoot;
     UPROPERTY() TArray<TObjectPtr<UStaticMeshComponent>> HealFlaskParts;
