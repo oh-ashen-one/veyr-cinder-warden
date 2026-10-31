@@ -1,0 +1,3283 @@
+{
+ "date": "2026-10-31",
+ "round": "A1",
+ "branch": "fable/knight-complete-20261028",
+ "tests": {
+  "swingStops": "no run of >=2 consecutive rendered frames with blade-tip screen speed < 3 px/f inside the swing (analytic: stops; video: slow)",
+  "identicalFrames": "0 exact duplicate consecutive frames",
+  "recovery": "recovery blade peak / strike peak <= 0.40 (analytic recoveryOverStrike / video recoveryOverStrike) and reverse azimuth sweep inside the strike height band / strike sweep (retrace) <= 0.25",
+  "hipsDrop": "heavy clips: hips drop (game cm) visible in side view",
+  "readyPose": "start/end body pose distance to that grip's idle frame 0 (cm body/feet)",
+  "footSkate": "max planted-foot slide cm/frame (L/R)",
+  "grip": "hand-to-socket drift cm / deg",
+  "ground": "lowest sword point game cm (>= 0)"
+ },
+ "analytic": {
+  "date": "2026-10-31",
+  "method": "Knight attack fix round A1 (2026-10-31): pass-test metrics (plain CPython/numpy + OpenCV, no Blender, no GPU).\n\n  measure_attacks_a1.py metrics OUT.json            analytic metrics, before (runtime) and after (A1) of every clip\n  measure_attacks_a1.py video MEDIA_DIR OUT.json    critic-replica video metrics on before-/after-<Clip>.mp4\n  measure_attacks_a1.py preview OUT.png CLIP ...    stick-figure front/side strips (before above after), every 2nd frame\n\nAnalytic metrics sample each GLB exactly like render_review.py (even sampling at the gameplay rate, 30 fps) and project\nthe blade centroid with the review cameras (hips-follow focus, ortho 3.2 m over 810 px), so speeds are in the critic's\npx/frame (max over the three panels). Frames are 0-based rendered frames.",
+  "clips": {
+   "LightAttack": {
+    "before": {
+     "glb": "Local/CustomuseAssets/Sourced20261025b/knight/Mixamo_Attack_v17.glb",
+     "sha256": "f2fdf780bf7269fe6ba0a7e2d44ca1e999a3e4817008d45f98e20d3eade50b9c",
+     "rate": 1.6,
+     "frames": 29,
+     "damageFrames": [
+      [
+       8.4,
+       13.5
+      ]
+     ],
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      10.4,
+      15.7,
+      19.6,
+      23.7,
+      19.8,
+      1.8,
+      32.5,
+      88.1,
+      137.4,
+      138.7,
+      96.4,
+      60.8,
+      45.9,
+      38.2,
+      39.1,
+      22.0,
+      25.8,
+      55.7,
+      75.2,
+      99.4,
+      104.5,
+      86.2,
+      45.9,
+      19.8,
+      9.0,
+      5.7,
+      4.2,
+      3.3
+     ],
+     "activeSwingFrames": [
+      1,
+      18
+     ],
+     "strikePeakPx": 138.7,
+     "strikePeakFrame": 10,
+     "stops": {
+      "slowRuns": [],
+      "identicalFrames": [],
+      "pass": true
+     },
+     "freeze": {
+      "runsBelow1px": [],
+      "pass": true
+     },
+     "recovery": {
+      "frames": [
+       18,
+       28
+      ],
+      "peakPx": 104.5,
+      "peakOverStrike": 0.753,
+      "retraceFraction": 0.942,
+      "strikeSweepDeg": 158.8,
+      "reverseSweepInStrikeBandDeg": 149.6,
+      "strikeTipHeightBandCm": [
+       43.7,
+       418.0
+      ],
+      "pass": false
+     },
+     "hipsDrop": {
+      "cm": 15.9,
+      "sideViewPx": 16.7,
+      "hipsStartCm": 111.3,
+      "pass": null
+     },
+     "readyPose": {
+      "startCm": 64.2,
+      "endCm": 64.2,
+      "bladeTipStartCm": 329.6,
+      "bladeTipEndCm": 331.6,
+      "pass": false
+     },
+     "footSkate": {
+      "Left": {
+       "maxPlantedSlideCmPerFrame": 18.15,
+       "frame": 26
+      },
+      "Right": {
+       "maxPlantedSlideCmPerFrame": 14.41,
+       "frame": 23
+      },
+      "pass": false
+     },
+     "grip": {
+      "maxShiftCm": 0.06,
+      "maxRotDeg": 0.06,
+      "pass": true
+     },
+     "groundMinCm": 43.8,
+     "groundPass": true
+    },
+    "after": {
+     "glb": "Local/CustomuseAssets/AttacksA1-20261031/knight/LightAttack_A1.glb",
+     "sha256": "b1aeeb34868b101c1aff127a1422ab0904d5a6cd57c14d4af96d7bff4c2c5505",
+     "rate": 1.35,
+     "frames": 33,
+     "damageFrames": [
+      [
+       7.7,
+       12.6
+      ]
+     ],
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      8.9,
+      48.7,
+      91.8,
+      109.1,
+      101.1,
+      70.2,
+      40.0,
+      103.4,
+      203.4,
+      202.5,
+      129.1,
+      147.5,
+      85.8,
+      73.8,
+      36.8,
+      8.8,
+      14.2,
+      25.8,
+      48.4,
+      54.5,
+      58.2,
+      52.1,
+      32.4,
+      27.7,
+      27.2,
+      24.9,
+      19.4,
+      11.7,
+      9.7,
+      9.2,
+      5.2,
+      1.0
+     ],
+     "activeSwingFrames": [
+      2,
+      17
+     ],
+     "strikePeakPx": 203.4,
+     "strikePeakFrame": 9,
+     "stops": {
+      "slowRuns": [],
+      "identicalFrames": [],
+      "pass": true
+     },
+     "freeze": {
+      "runsBelow1px": [],
+      "pass": true
+     },
+     "recovery": {
+      "frames": [
+       17,
+       32
+      ],
+      "peakPx": 58.2,
+      "peakOverStrike": 0.286,
+      "retraceFraction": 0.222,
+      "strikeSweepDeg": 266.7,
+      "reverseSweepInStrikeBandDeg": 59.2,
+      "strikeTipHeightBandCm": [
+       49.2,
+       319.3
+      ],
+      "pass": true
+     },
+     "hipsDrop": {
+      "cm": 36.0,
+      "sideViewPx": 38.0,
+      "hipsStartCm": 131.5,
+      "pass": null
+     },
+     "readyPose": {
+      "startCm": 0.4,
+      "endCm": 0.4,
+      "bladeTipStartCm": 10.5,
+      "bladeTipEndCm": 10.4,
+      "pass": true
+     },
+     "footSkate": {
+      "Left": {
+       "maxPlantedSlideCmPerFrame": 0.02,
+       "frame": 29
+      },
+      "Right": {
+       "maxPlantedSlideCmPerFrame": 0.01,
+       "frame": 5
+      },
+      "pass": true
+     },
+     "grip": {
+      "maxShiftCm": 0.26,
+      "maxRotDeg": 0.05,
+      "pass": true
+     },
+     "groundMinCm": 3.2,
+     "groundPass": true
+    }
+   },
+   "LightAttackTwoHand": {
+    "before": {
+     "glb": "Local/CustomuseAssets/Polish20261025/knight/LightAttackTwoHand_Compact_Blender_v2r3.glb",
+     "sha256": "f7192952525c9c4f94c880dc61536d7c3ccd49bd40a946c58d542b0ad8843a70",
+     "rate": 1.0,
+     "frames": 37,
+     "damageFrames": [
+      [
+       10.5,
+       16.8
+      ]
+     ],
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      8.9,
+      18.9,
+      28.3,
+      31.2,
+      29.5,
+      20.1,
+      8.7,
+      17.3,
+      12.7,
+      21.7,
+      37.4,
+      64.1,
+      73.5,
+      32.9,
+      0.2,
+      50.4,
+      28.5,
+      13.8,
+      3.5,
+      3.8,
+      5.5,
+      11.0,
+      18.0,
+      25.6,
+      31.2,
+      32.9,
+      29.8,
+      22.0,
+      17.3,
+      14.9,
+      11.9,
+      9.0,
+      7.0,
+      5.3,
+      3.4,
+      1.2
+     ],
+     "activeSwingFrames": [
+      2,
+      21
+     ],
+     "strikePeakPx": 73.5,
+     "strikePeakFrame": 13,
+     "stops": {
+      "slowRuns": [],
+      "identicalFrames": [],
+      "pass": true
+     },
+     "freeze": {
+      "runsBelow1px": [],
+      "pass": true
+     },
+     "recovery": {
+      "frames": [
+       21,
+       36
+      ],
+      "peakPx": 32.9,
+      "peakOverStrike": 0.448,
+      "retraceFraction": 0.37,
+      "strikeSweepDeg": 83.6,
+      "reverseSweepInStrikeBandDeg": 30.9,
+      "strikeTipHeightBandCm": [
+       181.4,
+       315.6
+      ],
+      "pass": false
+     },
+     "hipsDrop": {
+      "cm": 10.3,
+      "sideViewPx": 10.9,
+      "hipsStartCm": 131.8,
+      "pass": null
+     },
+     "readyPose": {
+      "startCm": 0.0,
+      "endCm": 0.0,
+      "bladeTipStartCm": 0.0,
+      "bladeTipEndCm": 0.0,
+      "pass": true
+     },
+     "footSkate": {
+      "Left": {
+       "maxPlantedSlideCmPerFrame": 2.57,
+       "frame": 27
+      },
+      "Right": {
+       "maxPlantedSlideCmPerFrame": 2.26,
+       "frame": 13
+      },
+      "pass": false
+     },
+     "grip": {
+      "maxShiftCm": 0.0,
+      "maxRotDeg": 0.0,
+      "pass": null
+     },
+     "groundMinCm": 132.6,
+     "groundPass": true
+    },
+    "after": {
+     "glb": "Local/CustomuseAssets/AttacksA1-20261031/knight/LightAttackTwoHand_A1.glb",
+     "sha256": "8fce23dc017db4b3283318133a32abc725d48ab51439a3405c8537c335fba2a5",
+     "rate": 1.0,
+     "frames": 36,
+     "damageFrames": [
+      [
+       10.5,
+       15.9
+      ]
+     ],
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      9.1,
+      19.1,
+      28.5,
+      31.5,
+      29.4,
+      19.9,
+      7.5,
+      17.0,
+      13.3,
+      22.5,
+      39.8,
+      65.6,
+      71.7,
+      43.5,
+      36.3,
+      27.9,
+      18.8,
+      25.3,
+      21.5,
+      20.6,
+      20.0,
+      19.3,
+      18.3,
+      17.2,
+      15.8,
+      14.0,
+      13.0,
+      11.8,
+      10.5,
+      9.0,
+      7.4,
+      6.1,
+      4.9,
+      3.4,
+      1.4
+     ],
+     "activeSwingFrames": [
+      2,
+      20
+     ],
+     "strikePeakPx": 71.7,
+     "strikePeakFrame": 13,
+     "stops": {
+      "slowRuns": [],
+      "identicalFrames": [],
+      "pass": true
+     },
+     "freeze": {
+      "runsBelow1px": [],
+      "pass": true
+     },
+     "recovery": {
+      "frames": [
+       20,
+       35
+      ],
+      "peakPx": 20.6,
+      "peakOverStrike": 0.288,
+      "retraceFraction": 0.185,
+      "strikeSweepDeg": 94.2,
+      "reverseSweepInStrikeBandDeg": 17.4,
+      "strikeTipHeightBandCm": [
+       166.3,
+       314.2
+      ],
+      "pass": true
+     },
+     "hipsDrop": {
+      "cm": 10.0,
+      "sideViewPx": 10.6,
+      "hipsStartCm": 131.8,
+      "pass": null
+     },
+     "readyPose": {
+      "startCm": 0.0,
+      "endCm": 0.0,
+      "bladeTipStartCm": 0.0,
+      "bladeTipEndCm": 0.0,
+      "pass": true
+     },
+     "footSkate": {
+      "Left": {
+       "maxPlantedSlideCmPerFrame": 1.94,
+       "frame": 15
+      },
+      "Right": {
+       "maxPlantedSlideCmPerFrame": 2.22,
+       "frame": 13
+      },
+      "pass": false
+     },
+     "grip": {
+      "maxShiftCm": 0.04,
+      "maxRotDeg": 0.03,
+      "pass": null
+     },
+     "groundMinCm": 132.6,
+     "groundPass": true
+    }
+   },
+   "HeavyAttack": {
+    "before": {
+     "glb": "Local/CustomuseAssets/Polish20261025/knight/HeavyAttackOneHand_Blender_v4r5.glb",
+     "sha256": "22ca9e29e259501adcfe295f5fdc85d7f37a489949e5cdf022d8840c55539fda",
+     "rate": 1.0,
+     "frames": 43,
+     "damageFrames": [
+      [
+       15.6,
+       28.2
+      ]
+     ],
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      15.1,
+      17.6,
+      29.8,
+      28.6,
+      31.4,
+      27.7,
+      20.8,
+      11.1,
+      11.6,
+      14.6,
+      16.2,
+      14.7,
+      7.6,
+      42.1,
+      83.4,
+      105.9,
+      92.5,
+      83.3,
+      55.5,
+      30.8,
+      20.9,
+      8.8,
+      1.4,
+      0.7,
+      0.9,
+      2.5,
+      6.5,
+      15.8,
+      25.3,
+      33.3,
+      39.4,
+      41.1,
+      34.4,
+      24.0,
+      16.3,
+      24.2,
+      29.6,
+      39.6,
+      48.1,
+      43.8,
+      23.4,
+      22.5
+     ],
+     "activeSwingFrames": [
+      1,
+      33
+     ],
+     "strikePeakPx": 105.9,
+     "strikePeakFrame": 16,
+     "stops": {
+      "slowRuns": [
+       [
+        23,
+        26
+       ]
+      ],
+      "identicalFrames": [],
+      "pass": false
+     },
+     "freeze": {
+      "runsBelow1px": [],
+      "pass": true
+     },
+     "recovery": {
+      "frames": [
+       33,
+       42
+      ],
+      "peakPx": 48.1,
+      "peakOverStrike": 0.455,
+      "retraceFraction": 0.385,
+      "strikeSweepDeg": 179.3,
+      "reverseSweepInStrikeBandDeg": 69.0,
+      "strikeTipHeightBandCm": [
+       44.4,
+       259.6
+      ],
+      "pass": false
+     },
+     "hipsDrop": {
+      "cm": 20.0,
+      "sideViewPx": 21.1,
+      "hipsStartCm": 131.8,
+      "pass": true
+     },
+     "readyPose": {
+      "startCm": 0.0,
+      "endCm": 0.0,
+      "bladeTipStartCm": 0.0,
+      "bladeTipEndCm": 0.0,
+      "pass": true
+     },
+     "footSkate": {
+      "Left": {
+       "maxPlantedSlideCmPerFrame": 3.58,
+       "frame": 19
+      },
+      "Right": {
+       "maxPlantedSlideCmPerFrame": 4.59,
+       "frame": 16
+      },
+      "pass": false
+     },
+     "grip": {
+      "maxShiftCm": 0.0,
+      "maxRotDeg": 0.01,
+      "pass": true
+     },
+     "groundMinCm": 33.0,
+     "groundPass": true
+    },
+    "after": {
+     "glb": "Local/CustomuseAssets/AttacksA1-20261031/knight/HeavyAttack_A1.glb",
+     "sha256": "69df6e9fa5dc461d2eaa377d20d39a67a51729cbfd44027f18183121fe636054",
+     "rate": 1.1,
+     "frames": 56,
+     "damageFrames": [
+      [
+       17.7,
+       22.6
+      ]
+     ],
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      3.7,
+      16.8,
+      24.2,
+      18.9,
+      17.4,
+      12.9,
+      21.4,
+      27.0,
+      26.8,
+      35.0,
+      42.6,
+      38.4,
+      35.8,
+      36.7,
+      43.6,
+      35.4,
+      37.8,
+      93.4,
+      190.3,
+      219.6,
+      170.6,
+      108.4,
+      87.9,
+      72.4,
+      58.5,
+      41.8,
+      31.2,
+      25.3,
+      22.1,
+      20.1,
+      18.3,
+      16.6,
+      12.5,
+      41.9,
+      45.5,
+      48.4,
+      49.1,
+      46.9,
+      45.2,
+      49.0,
+      37.7,
+      27.4,
+      17.4,
+      10.5,
+      7.5,
+      7.1,
+      8.0,
+      9.9,
+      11.9,
+      13.0,
+      12.4,
+      10.0,
+      6.5,
+      2.9,
+      0.5
+     ],
+     "activeSwingFrames": [
+      2,
+      27
+     ],
+     "strikePeakPx": 219.6,
+     "strikePeakFrame": 20,
+     "stops": {
+      "slowRuns": [],
+      "identicalFrames": [],
+      "pass": true
+     },
+     "freeze": {
+      "runsBelow1px": [],
+      "pass": true
+     },
+     "recovery": {
+      "frames": [
+       27,
+       55
+      ],
+      "peakPx": 49.1,
+      "peakOverStrike": 0.224,
+      "retraceFraction": 0.195,
+      "strikeSweepDeg": 272.2,
+      "reverseSweepInStrikeBandDeg": 53.1,
+      "strikeTipHeightBandCm": [
+       50.6,
+       211.6
+      ],
+      "pass": true
+     },
+     "hipsDrop": {
+      "cm": 44.5,
+      "sideViewPx": 47.0,
+      "hipsStartCm": 131.5,
+      "pass": true
+     },
+     "readyPose": {
+      "startCm": 1.2,
+      "endCm": 0.6,
+      "bladeTipStartCm": 11.6,
+      "bladeTipEndCm": 10.2,
+      "pass": true
+     },
+     "footSkate": {
+      "Left": {
+       "maxPlantedSlideCmPerFrame": 0.03,
+       "frame": 19
+      },
+      "Right": {
+       "maxPlantedSlideCmPerFrame": 0.12,
+       "frame": 12
+      },
+      "pass": true
+     },
+     "grip": {
+      "maxShiftCm": 0.27,
+      "maxRotDeg": 0.11,
+      "pass": true
+     },
+     "groundMinCm": 2.0,
+     "groundPass": true
+    }
+   },
+   "HeavyAttackAlternate": {
+    "before": {
+     "glb": "Local/CustomuseAssets/Polish20261025/knight/HeavyAttackOneHand_Blender_v4r3.glb",
+     "sha256": "eda87e5d49a22ac2ab3fd258e26a2a6a850a6cbb7c214607ddd5005acb870f6a",
+     "rate": 1.0,
+     "frames": 43,
+     "damageFrames": [
+      [
+       15.6,
+       28.2
+      ]
+     ],
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      15.1,
+      17.7,
+      29.8,
+      34.5,
+      30.9,
+      24.6,
+      18.9,
+      12.5,
+      6.7,
+      7.0,
+      9.3,
+      10.8,
+      13.6,
+      54.3,
+      86.9,
+      97.7,
+      69.3,
+      63.0,
+      44.3,
+      30.9,
+      20.9,
+      8.8,
+      1.4,
+      0.7,
+      0.9,
+      2.5,
+      6.5,
+      15.8,
+      25.3,
+      33.3,
+      39.4,
+      41.1,
+      34.4,
+      24.0,
+      16.3,
+      24.2,
+      29.6,
+      39.6,
+      48.1,
+      43.8,
+      23.4,
+      22.5
+     ],
+     "activeSwingFrames": [
+      1,
+      33
+     ],
+     "strikePeakPx": 97.7,
+     "strikePeakFrame": 16,
+     "stops": {
+      "slowRuns": [
+       [
+        23,
+        26
+       ]
+      ],
+      "identicalFrames": [],
+      "pass": false
+     },
+     "freeze": {
+      "runsBelow1px": [],
+      "pass": true
+     },
+     "recovery": {
+      "frames": [
+       33,
+       42
+      ],
+      "peakPx": 48.1,
+      "peakOverStrike": 0.493,
+      "retraceFraction": 0.0,
+      "strikeSweepDeg": 158.5,
+      "reverseSweepInStrikeBandDeg": 0.0,
+      "strikeTipHeightBandCm": [
+       44.5,
+       171.9
+      ],
+      "pass": false
+     },
+     "hipsDrop": {
+      "cm": 20.0,
+      "sideViewPx": 21.1,
+      "hipsStartCm": 131.8,
+      "pass": true
+     },
+     "readyPose": {
+      "startCm": 0.0,
+      "endCm": 0.0,
+      "bladeTipStartCm": 0.0,
+      "bladeTipEndCm": 0.0,
+      "pass": true
+     },
+     "footSkate": {
+      "Left": {
+       "maxPlantedSlideCmPerFrame": 3.58,
+       "frame": 19
+      },
+      "Right": {
+       "maxPlantedSlideCmPerFrame": 4.59,
+       "frame": 16
+      },
+      "pass": false
+     },
+     "grip": {
+      "maxShiftCm": 0.0,
+      "maxRotDeg": 0.01,
+      "pass": true
+     },
+     "groundMinCm": 33.0,
+     "groundPass": true
+    },
+    "after": {
+     "glb": "Local/CustomuseAssets/AttacksA1-20261031/knight/HeavyAttackAlternate_A1.glb",
+     "sha256": "09731e74c36c6066744dda1645a2ed0d2ea6a7bb1be576bbfae421c37020146e",
+     "rate": 1.15,
+     "frames": 58,
+     "damageFrames": [
+      [
+       18.5,
+       22.7
+      ]
+     ],
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      4.3,
+      22.9,
+      44.7,
+      54.0,
+      48.0,
+      35.5,
+      33.1,
+      69.8,
+      102.9,
+      84.4,
+      50.1,
+      26.0,
+      11.0,
+      30.6,
+      30.9,
+      31.7,
+      47.4,
+      65.9,
+      124.5,
+      174.5,
+      122.2,
+      124.1,
+      92.3,
+      50.2,
+      32.7,
+      26.0,
+      23.7,
+      18.9,
+      3.4,
+      3.9,
+      4.3,
+      18.4,
+      20.1,
+      25.5,
+      33.5,
+      41.0,
+      44.5,
+      40.9,
+      30.3,
+      25.8,
+      26.9,
+      15.8,
+      17.2,
+      20.9,
+      22.6,
+      22.2,
+      18.8,
+      10.9,
+      8.9,
+      21.4,
+      26.1,
+      28.4,
+      25.5,
+      19.5,
+      12.3,
+      5.4,
+      0.9
+     ],
+     "activeSwingFrames": [
+      2,
+      27
+     ],
+     "strikePeakPx": 174.5,
+     "strikePeakFrame": 20,
+     "stops": {
+      "slowRuns": [],
+      "identicalFrames": [],
+      "pass": true
+     },
+     "freeze": {
+      "runsBelow1px": [],
+      "pass": true
+     },
+     "recovery": {
+      "frames": [
+       27,
+       57
+      ],
+      "peakPx": 44.5,
+      "peakOverStrike": 0.255,
+      "retraceFraction": 0.264,
+      "strikeSweepDeg": 115.1,
+      "reverseSweepInStrikeBandDeg": 30.4,
+      "strikeTipHeightBandCm": [
+       -8.1,
+       458.0
+      ],
+      "pass": false
+     },
+     "hipsDrop": {
+      "cm": 68.9,
+      "sideViewPx": 72.7,
+      "hipsStartCm": 131.4,
+      "pass": true
+     },
+     "readyPose": {
+      "startCm": 0.9,
+      "endCm": 0.3,
+      "bladeTipStartCm": 9.8,
+      "bladeTipEndCm": 10.5,
+      "pass": true
+     },
+     "footSkate": {
+      "Left": {
+       "maxPlantedSlideCmPerFrame": 0.02,
+       "frame": 22
+      },
+      "Right": {
+       "maxPlantedSlideCmPerFrame": 0.03,
+       "frame": 39
+      },
+      "pass": true
+     },
+     "grip": {
+      "maxShiftCm": 0.19,
+      "maxRotDeg": 0.07,
+      "pass": true
+     },
+     "groundMinCm": 1.2,
+     "groundPass": true
+    }
+   },
+   "HeavyAttackTwoHand": {
+    "before": {
+     "glb": "Local/CustomuseAssets/Polish20261025/knight/StrongAttackTwoHand_Sweep_Blender_v2r3.glb",
+     "sha256": "823bae1b454e88adf7a3ec33a2e6a05e53937ebcd54516606e19acc87280bc64",
+     "rate": 1.0,
+     "frames": 49,
+     "damageFrames": [
+      [
+       12.9,
+       22.2
+      ]
+     ],
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      9.7,
+      26.2,
+      36.2,
+      41.2,
+      44.3,
+      44.9,
+      47.5,
+      42.8,
+      33.7,
+      22.6,
+      11.4,
+      18.0,
+      62.1,
+      73.8,
+      83.4,
+      109.1,
+      39.8,
+      0.0,
+      1.2,
+      9.6,
+      30.5,
+      42.8,
+      37.3,
+      29.7,
+      31.4,
+      40.4,
+      48.0,
+      59.0,
+      44.0,
+      29.2,
+      4.0,
+      16.1,
+      26.4,
+      35.9,
+      48.9,
+      53.7,
+      50.2,
+      39.6,
+      31.6,
+      29.4,
+      27.6,
+      25.0,
+      22.3,
+      20.4,
+      17.5,
+      13.6,
+      9.1,
+      3.5
+     ],
+     "activeSwingFrames": [
+      2,
+      27
+     ],
+     "strikePeakPx": 109.1,
+     "strikePeakFrame": 16,
+     "stops": {
+      "slowRuns": [
+       [
+        18,
+        19
+       ]
+      ],
+      "identicalFrames": [
+       18
+      ],
+      "pass": false
+     },
+     "freeze": {
+      "runsBelow1px": [],
+      "pass": true
+     },
+     "recovery": {
+      "frames": [
+       27,
+       48
+      ],
+      "peakPx": 59.0,
+      "peakOverStrike": 0.541,
+      "retraceFraction": 0.292,
+      "strikeSweepDeg": 97.0,
+      "reverseSweepInStrikeBandDeg": 28.4,
+      "strikeTipHeightBandCm": [
+       113.0,
+       208.6
+      ],
+      "pass": false
+     },
+     "hipsDrop": {
+      "cm": 22.1,
+      "sideViewPx": 23.3,
+      "hipsStartCm": 131.8,
+      "pass": true
+     },
+     "readyPose": {
+      "startCm": 0.0,
+      "endCm": 0.0,
+      "bladeTipStartCm": 0.0,
+      "bladeTipEndCm": 0.0,
+      "pass": true
+     },
+     "footSkate": {
+      "Left": {
+       "maxPlantedSlideCmPerFrame": 2.81,
+       "frame": 35
+      },
+      "Right": {
+       "maxPlantedSlideCmPerFrame": 3.82,
+       "frame": 14
+      },
+      "pass": false
+     },
+     "grip": {
+      "maxShiftCm": 0.07,
+      "maxRotDeg": 0.04,
+      "pass": null
+     },
+     "groundMinCm": 45.4,
+     "groundPass": true
+    },
+    "after": {
+     "glb": "Local/CustomuseAssets/AttacksA1-20261031/knight/HeavyAttackTwoHand_A1.glb",
+     "sha256": "33257c165f13d806c7efcf2968c7535e0fb958053b35196c141888eeea23562a",
+     "rate": 1.0,
+     "frames": 49,
+     "damageFrames": [
+      [
+       12.9,
+       18.1
+      ]
+     ],
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      9.4,
+      25.6,
+      35.6,
+      40.4,
+      43.6,
+      44.4,
+      46.8,
+      43.0,
+      34.3,
+      23.9,
+      12.7,
+      7.5,
+      61.3,
+      68.9,
+      81.7,
+      105.5,
+      70.5,
+      66.2,
+      56.6,
+      45.2,
+      51.3,
+      50.7,
+      46.3,
+      39.4,
+      34.8,
+      21.0,
+      28.1,
+      28.3,
+      28.8,
+      28.7,
+      28.1,
+      26.8,
+      25.1,
+      23.1,
+      20.7,
+      18.0,
+      19.0,
+      20.2,
+      20.7,
+      20.5,
+      19.5,
+      18.0,
+      17.3,
+      16.0,
+      14.2,
+      12.0,
+      9.5,
+      3.5
+     ],
+     "activeSwingFrames": [
+      2,
+      23
+     ],
+     "strikePeakPx": 105.5,
+     "strikePeakFrame": 16,
+     "stops": {
+      "slowRuns": [],
+      "identicalFrames": [],
+      "pass": true
+     },
+     "freeze": {
+      "runsBelow1px": [],
+      "pass": true
+     },
+     "recovery": {
+      "frames": [
+       23,
+       48
+      ],
+      "peakPx": 46.3,
+      "peakOverStrike": 0.439,
+      "retraceFraction": 0.277,
+      "strikeSweepDeg": 141.7,
+      "reverseSweepInStrikeBandDeg": 39.2,
+      "strikeTipHeightBandCm": [
+       90.5,
+       209.8
+      ],
+      "pass": false
+     },
+     "hipsDrop": {
+      "cm": 22.1,
+      "sideViewPx": 23.3,
+      "hipsStartCm": 131.8,
+      "pass": true
+     },
+     "readyPose": {
+      "startCm": 0.0,
+      "endCm": 0.0,
+      "bladeTipStartCm": 0.0,
+      "bladeTipEndCm": 0.0,
+      "pass": true
+     },
+     "footSkate": {
+      "Left": {
+       "maxPlantedSlideCmPerFrame": 2.84,
+       "frame": 25
+      },
+      "Right": {
+       "maxPlantedSlideCmPerFrame": 3.76,
+       "frame": 15
+      },
+      "pass": false
+     },
+     "grip": {
+      "maxShiftCm": 0.13,
+      "maxRotDeg": 0.08,
+      "pass": null
+     },
+     "groundMinCm": 45.7,
+     "groundPass": true
+    }
+   },
+   "HeavyAttackTwoHandAlternate": {
+    "before": {
+     "glb": "Local/CustomuseAssets/Polish20261025/knight/StrongAttackTwoHand_Thrust_Blender_v2r4.glb",
+     "sha256": "c58950ffbb551102e615718aa9feb042df3afcbecf23e6cb4ed94d92bd0bc020",
+     "rate": 1.0,
+     "frames": 70,
+     "damageFrames": [
+      [
+       21.0,
+       29.4
+      ]
+     ],
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      7.7,
+      18.4,
+      25.9,
+      27.1,
+      24.1,
+      22.6,
+      21.3,
+      19.9,
+      21.3,
+      22.5,
+      23.3,
+      20.9,
+      14.9,
+      9.1,
+      5.3,
+      1.9,
+      10.8,
+      23.1,
+      39.8,
+      60.8,
+      89.3,
+      78.8,
+      56.2,
+      37.5,
+      0.1,
+      0.1,
+      12.3,
+      13.3,
+      9.7,
+      6.4,
+      3.4,
+      1.4,
+      1.0,
+      0.8,
+      0.6,
+      0.4,
+      0.3,
+      0.3,
+      0.2,
+      0.3,
+      0.4,
+      0.6,
+      0.9,
+      1.4,
+      1.9,
+      2.2,
+      5.2,
+      9.7,
+      13.8,
+      17.3,
+      20.1,
+      22.0,
+      22.7,
+      22.4,
+      21.3,
+      20.1,
+      18.3,
+      16.9,
+      15.4,
+      14.0,
+      12.5,
+      11.0,
+      9.9,
+      8.7,
+      7.4,
+      5.9,
+      4.4,
+      2.7,
+      0.9
+     ],
+     "activeSwingFrames": [
+      2,
+      34
+     ],
+     "strikePeakPx": 89.3,
+     "strikePeakFrame": 21,
+     "stops": {
+      "slowRuns": [
+       [
+        25,
+        26
+       ],
+       [
+        32,
+        34
+       ]
+      ],
+      "identicalFrames": [],
+      "pass": false
+     },
+     "freeze": {
+      "runsBelow1px": [
+       [
+        33,
+        43
+       ]
+      ],
+      "pass": false
+     },
+     "recovery": {
+      "frames": [
+       34,
+       69
+      ],
+      "peakPx": 22.7,
+      "peakOverStrike": 0.255,
+      "retraceFraction": 0.215,
+      "strikeSweepDeg": 93.5,
+      "reverseSweepInStrikeBandDeg": 20.1,
+      "strikeTipHeightBandCm": [
+       76.4,
+       239.8
+      ],
+      "pass": true
+     },
+     "hipsDrop": {
+      "cm": 22.8,
+      "sideViewPx": 24.0,
+      "hipsStartCm": 131.8,
+      "pass": true
+     },
+     "readyPose": {
+      "startCm": 0.0,
+      "endCm": 0.0,
+      "bladeTipStartCm": 0.0,
+      "bladeTipEndCm": 0.0,
+      "pass": true
+     },
+     "footSkate": {
+      "Left": {
+       "maxPlantedSlideCmPerFrame": 2.82,
+       "frame": 50
+      },
+      "Right": {
+       "maxPlantedSlideCmPerFrame": 1.96,
+       "frame": 21
+      },
+      "pass": false
+     },
+     "grip": {
+      "maxShiftCm": 3.82,
+      "maxRotDeg": 30.0,
+      "pass": null
+     },
+     "groundMinCm": 71.8,
+     "groundPass": true
+    },
+    "after": {
+     "glb": "Local/CustomuseAssets/AttacksA1-20261031/knight/HeavyAttackTwoHandAlternate_A1.glb",
+     "sha256": "e5c6172ca9560f7bce37b06ca43bb4b418ba4e31b00ad8a2c8d0bfeb78d458df",
+     "rate": 1.0,
+     "frames": 61,
+     "damageFrames": [
+      [
+       21.0,
+       29.3
+      ]
+     ],
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      7.7,
+      18.4,
+      26.0,
+      27.2,
+      24.1,
+      22.7,
+      21.3,
+      19.9,
+      21.4,
+      22.5,
+      23.3,
+      20.8,
+      14.8,
+      9.1,
+      5.2,
+      2.0,
+      11.1,
+      23.4,
+      40.3,
+      61.8,
+      89.5,
+      78.2,
+      53.2,
+      13.1,
+      12.2,
+      12.4,
+      12.5,
+      12.4,
+      12.0,
+      11.0,
+      4.1,
+      11.5,
+      12.4,
+      12.6,
+      12.8,
+      12.9,
+      12.9,
+      12.9,
+      12.8,
+      12.7,
+      12.6,
+      12.4,
+      12.2,
+      12.1,
+      12.1,
+      11.9,
+      11.8,
+      11.7,
+      11.5,
+      11.3,
+      11.1,
+      10.9,
+      10.5,
+      9.8,
+      8.6,
+      7.3,
+      5.9,
+      4.3,
+      2.7,
+      0.9
+     ],
+     "activeSwingFrames": [
+      2,
+      34
+     ],
+     "strikePeakPx": 89.5,
+     "strikePeakFrame": 21,
+     "stops": {
+      "slowRuns": [],
+      "identicalFrames": [],
+      "pass": true
+     },
+     "freeze": {
+      "runsBelow1px": [],
+      "pass": true
+     },
+     "recovery": {
+      "frames": [
+       34,
+       60
+      ],
+      "peakPx": 12.9,
+      "peakOverStrike": 0.144,
+      "retraceFraction": 0.188,
+      "strikeSweepDeg": 86.4,
+      "reverseSweepInStrikeBandDeg": 16.3,
+      "strikeTipHeightBandCm": [
+       85.5,
+       239.4
+      ],
+      "pass": true
+     },
+     "hipsDrop": {
+      "cm": 25.4,
+      "sideViewPx": 26.8,
+      "hipsStartCm": 131.8,
+      "pass": true
+     },
+     "readyPose": {
+      "startCm": 0.0,
+      "endCm": 0.0,
+      "bladeTipStartCm": 0.0,
+      "bladeTipEndCm": 0.0,
+      "pass": true
+     },
+     "footSkate": {
+      "Left": {
+       "maxPlantedSlideCmPerFrame": 2.62,
+       "frame": 56
+      },
+      "Right": {
+       "maxPlantedSlideCmPerFrame": 1.97,
+       "frame": 21
+      },
+      "pass": false
+     },
+     "grip": {
+      "maxShiftCm": 2.93,
+      "maxRotDeg": 27.91,
+      "pass": null
+     },
+     "groundMinCm": 72.0,
+     "groundPass": true
+    }
+   },
+   "LightCombo": {
+    "before": {
+     "glb": "Local/CustomuseAssets/Polish20261025/knight/LightCombo_Blender_v5.glb",
+     "sha256": "ccea5025ebdfccd015cb2f94ea31069d96c5203b9eefdd83dc357c0fa54f59f5",
+     "rate": 1.0,
+     "frames": 101,
+     "damageFrames": [
+      [
+       9.0,
+       15.0
+      ],
+      [
+       23.0,
+       31.0
+      ],
+      [
+       48.0,
+       58.9
+      ]
+     ],
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      18.6,
+      19.9,
+      18.9,
+      23.7,
+      25.1,
+      21.8,
+      15.7,
+      44.5,
+      93.0,
+      82.5,
+      85.3,
+      3.5,
+      64.8,
+      50.4,
+      56.1,
+      57.8,
+      34.7,
+      45.1,
+      52.5,
+      37.8,
+      30.5,
+      43.8,
+      79.9,
+      104.3,
+      100.2,
+      126.5,
+      10.8,
+      90.2,
+      79.3,
+      92.0,
+      81.3,
+      21.5,
+      14.1,
+      17.8,
+      17.8,
+      22.0,
+      14.5,
+      4.2,
+      4.9,
+      9.1,
+      11.7,
+      8.9,
+      8.9,
+      12.9,
+      3.2,
+      6.2,
+      33.1,
+      41.0,
+      121.2,
+      154.2,
+      156.5,
+      121.3,
+      13.5,
+      0.0,
+      0.0,
+      51.1,
+      57.6,
+      60.0,
+      26.4,
+      26.5,
+      35.3,
+      36.9,
+      25.1,
+      10.5,
+      29.3,
+      34.0,
+      21.9,
+      36.5,
+      34.5,
+      35.1,
+      49.0,
+      53.9,
+      54.6,
+      64.1,
+      54.1,
+      30.6,
+      21.1,
+      29.3,
+      30.8,
+      31.0,
+      27.5,
+      20.1,
+      11.2,
+      9.7,
+      8.2,
+      5.6,
+      0.9,
+      1.4,
+      1.8,
+      1.2,
+      0.9,
+      0.6,
+      0.1,
+      0.3,
+      0.7,
+      1.0,
+      1.5,
+      1.6,
+      1.1,
+      0.4
+     ],
+     "activeSwingFrames": [
+      1,
+      63
+     ],
+     "strikePeakPx": 156.5,
+     "strikePeakFrame": 51,
+     "stops": {
+      "slowRuns": [
+       [
+        54,
+        55
+       ]
+      ],
+      "identicalFrames": [
+       54,
+       55
+      ],
+      "pass": false
+     },
+     "freeze": {
+      "runsBelow1px": [
+       [
+        91,
+        96
+       ]
+      ],
+      "pass": false
+     },
+     "recovery": {
+      "frames": [
+       63,
+       100
+      ],
+      "peakPx": 64.1,
+      "peakOverStrike": 0.409,
+      "retraceFraction": 0.47,
+      "strikeSweepDeg": 174.2,
+      "reverseSweepInStrikeBandDeg": 81.9,
+      "strikeTipHeightBandCm": [
+       82.1,
+       209.2
+      ],
+      "pass": false
+     },
+     "hipsDrop": {
+      "cm": 19.2,
+      "sideViewPx": 20.3,
+      "hipsStartCm": 131.8,
+      "pass": null
+     },
+     "readyPose": {
+      "startCm": 0.0,
+      "endCm": 0.0,
+      "bladeTipStartCm": 0.0,
+      "bladeTipEndCm": 0.0,
+      "pass": true
+     },
+     "footSkate": {
+      "Left": {
+       "maxPlantedSlideCmPerFrame": 3.22,
+       "frame": 45
+      },
+      "Right": {
+       "maxPlantedSlideCmPerFrame": 4.6,
+       "frame": 76
+      },
+      "pass": false
+     },
+     "grip": {
+      "maxShiftCm": 0.08,
+      "maxRotDeg": 0.13,
+      "pass": null
+     },
+     "groundMinCm": -46.3,
+     "groundPass": false
+    },
+    "after": {
+     "glb": "Local/CustomuseAssets/AttacksA1-20261031/knight/LightCombo_A1.glb",
+     "sha256": "9721170d962c97d93ae3464240e24a25a2de7877f8cfe709cf9c1e62721d6e15",
+     "rate": 1.0,
+     "frames": 88,
+     "damageFrames": [
+      [
+       9.0,
+       14.2
+      ],
+      [
+       22.3,
+       29.5
+      ],
+      [
+       46.5,
+       54.4
+      ]
+     ],
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      18.7,
+      20.0,
+      19.1,
+      24.0,
+      25.2,
+      21.7,
+      15.6,
+      49.5,
+      91.2,
+      82.9,
+      72.4,
+      67.4,
+      52.3,
+      55.4,
+      59.5,
+      37.6,
+      41.4,
+      53.8,
+      39.4,
+      32.9,
+      35.6,
+      77.7,
+      104.4,
+      98.1,
+      103.1,
+      96.6,
+      93.1,
+      92.6,
+      91.7,
+      33.7,
+      15.8,
+      18.1,
+      17.8,
+      20.8,
+      17.5,
+      5.4,
+      3.6,
+      6.7,
+      13.8,
+      8.3,
+      9.1,
+      12.4,
+      4.4,
+      2.5,
+      29.4,
+      39.7,
+      102.6,
+      160.8,
+      160.1,
+      121.4,
+      65.5,
+      66.1,
+      59.4,
+      31.0,
+      24.6,
+      34.2,
+      37.4,
+      26.8,
+      10.5,
+      28.1,
+      34.7,
+      21.7,
+      36.3,
+      34.8,
+      35.3,
+      48.9,
+      54.2,
+      54.6,
+      64.5,
+      54.4,
+      30.7,
+      21.4,
+      29.5,
+      31.1,
+      31.1,
+      27.4,
+      19.8,
+      11.0,
+      8.8,
+      7.4,
+      6.0,
+      3.8,
+      1.2,
+      2.7,
+      1.6,
+      0.8,
+      0.2
+     ],
+     "activeSwingFrames": [
+      1,
+      59
+     ],
+     "strikePeakPx": 160.8,
+     "strikePeakFrame": 48,
+     "stops": {
+      "slowRuns": [],
+      "identicalFrames": [],
+      "pass": true
+     },
+     "freeze": {
+      "runsBelow1px": [],
+      "pass": true
+     },
+     "recovery": {
+      "frames": [
+       59,
+       87
+      ],
+      "peakPx": 64.5,
+      "peakOverStrike": 0.401,
+      "retraceFraction": 0.403,
+      "strikeSweepDeg": 205.2,
+      "reverseSweepInStrikeBandDeg": 82.7,
+      "strikeTipHeightBandCm": [
+       79.9,
+       223.7
+      ],
+      "pass": false
+     },
+     "hipsDrop": {
+      "cm": 19.2,
+      "sideViewPx": 20.2,
+      "hipsStartCm": 131.8,
+      "pass": null
+     },
+     "readyPose": {
+      "startCm": 0.0,
+      "endCm": 0.0,
+      "bladeTipStartCm": 0.0,
+      "bladeTipEndCm": 0.0,
+      "pass": true
+     },
+     "footSkate": {
+      "Left": {
+       "maxPlantedSlideCmPerFrame": 2.4,
+       "frame": 10
+      },
+      "Right": {
+       "maxPlantedSlideCmPerFrame": 4.6,
+       "frame": 71
+      },
+      "pass": false
+     },
+     "grip": {
+      "maxShiftCm": 0.6,
+      "maxRotDeg": 0.65,
+      "pass": null
+     },
+     "groundMinCm": -44.9,
+     "groundPass": false
+    }
+   }
+  }
+ },
+ "video": {
+  "date": "2026-10-31",
+  "method": "Critic method on the review mp4 (2430x810, three 810-px panels): blade = pixels with R - B > 18; per panel the\nblade-pixel centroid speed (px/frame), max over panels; exact-duplicate consecutive frames (max abs diff 0).",
+  "clips": {
+   "LightAttack": {
+    "before": {
+     "frames": 29,
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      16.6,
+      14.7,
+      19.4,
+      23.2,
+      20.8,
+      3.9,
+      32.8,
+      85.7,
+      142.8,
+      136.3,
+      90.5,
+      78.8,
+      24.9,
+      16.5,
+      52.0,
+      31.9,
+      31.5,
+      52.6,
+      56.1,
+      84.7,
+      102.5,
+      81.8,
+      46.8,
+      24.9,
+      17.1,
+      22.2,
+      13.9,
+      8.8
+     ],
+     "identicalFrames": [],
+     "strikePeakPx": 142.8,
+     "recoveryPeakPx": 102.5,
+     "recoveryOverStrike": 0.718,
+     "activeSwingFrames": [
+      1,
+      18
+     ],
+     "slowRunsInSwing": [],
+     "pass": {
+      "stops": true,
+      "recovery40": false
+     }
+    },
+    "after": {
+     "frames": 33,
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      7.3,
+      47.9,
+      88.0,
+      107.2,
+      96.6,
+      66.2,
+      34.2,
+      88.1,
+      162.2,
+      155.3,
+      146.4,
+      182.8,
+      91.0,
+      64.7,
+      39.3,
+      11.8,
+      15.5,
+      52.8,
+      70.2,
+      88.7,
+      46.7,
+      37.5,
+      75.1,
+      47.9,
+      24.5,
+      22.8,
+      15.3,
+      10.0,
+      12.3,
+      11.3,
+      5.3,
+      1.8
+     ],
+     "identicalFrames": [],
+     "strikePeakPx": 182.8,
+     "recoveryPeakPx": 88.7,
+     "recoveryOverStrike": 0.485,
+     "activeSwingFrames": [
+      2,
+      17
+     ],
+     "slowRunsInSwing": [],
+     "pass": {
+      "stops": true,
+      "recovery40": false
+     }
+    }
+   },
+   "LightAttackTwoHand": {
+    "before": {
+     "frames": 37,
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      10.8,
+      19.9,
+      29.4,
+      33.5,
+      33.9,
+      21.9,
+      10.4,
+      20.4,
+      10.8,
+      32.6,
+      84.2,
+      66.5,
+      68.5,
+      24.1,
+      7.6,
+      49.3,
+      34.6,
+      13.7,
+      13.8,
+      9.9,
+      14.1,
+      13.2,
+      19.0,
+      32.6,
+      19.3,
+      33.8,
+      44.2,
+      31.3,
+      15.7,
+      16.9,
+      10.6,
+      8.5,
+      24.9,
+      10.3,
+      14.4,
+      4.9
+     ],
+     "identicalFrames": [],
+     "strikePeakPx": 84.2,
+     "recoveryPeakPx": 44.2,
+     "recoveryOverStrike": 0.525,
+     "activeSwingFrames": [
+      1,
+      21
+     ],
+     "slowRunsInSwing": [],
+     "pass": {
+      "stops": true,
+      "recovery40": false
+     }
+    },
+    "after": {
+     "frames": 36,
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      8.8,
+      21.5,
+      31.4,
+      32.8,
+      33.7,
+      23.0,
+      8.8,
+      21.9,
+      9.5,
+      29.8,
+      52.9,
+      72.1,
+      71.5,
+      42.9,
+      27.6,
+      34.3,
+      12.3,
+      28.2,
+      21.1,
+      24.4,
+      30.1,
+      27.0,
+      15.2,
+      28.0,
+      20.8,
+      22.7,
+      15.1,
+      12.6,
+      25.1,
+      8.0,
+      9.7,
+      10.5,
+      5.5,
+      6.3,
+      3.4
+     ],
+     "identicalFrames": [],
+     "strikePeakPx": 72.1,
+     "recoveryPeakPx": 30.1,
+     "recoveryOverStrike": 0.417,
+     "activeSwingFrames": [
+      2,
+      20
+     ],
+     "slowRunsInSwing": [],
+     "pass": {
+      "stops": true,
+      "recovery40": false
+     }
+    }
+   },
+   "HeavyAttack": {
+    "before": {
+     "frames": 43,
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      13.7,
+      29.7,
+      22.1,
+      23.9,
+      32.9,
+      27.5,
+      26.6,
+      15.3,
+      9.3,
+      29.8,
+      19.2,
+      22.5,
+      16.6,
+      70.3,
+      113.2,
+      82.3,
+      73.1,
+      74.3,
+      83.6,
+      24.3,
+      40.9,
+      29.4,
+      24.4,
+      10.7,
+      16.1,
+      16.5,
+      14.5,
+      39.5,
+      29.3,
+      44.3,
+      43.9,
+      53.8,
+      26.7,
+      19.3,
+      16.3,
+      22.5,
+      21.4,
+      38.6,
+      35.2,
+      50.3,
+      25.9,
+      21.5
+     ],
+     "identicalFrames": [],
+     "strikePeakPx": 113.2,
+     "recoveryPeakPx": 50.3,
+     "recoveryOverStrike": 0.444,
+     "activeSwingFrames": [
+      1,
+      33
+     ],
+     "slowRunsInSwing": [],
+     "pass": {
+      "stops": true,
+      "recovery40": false
+     }
+    },
+    "after": {
+     "frames": 56,
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      6.0,
+      16.4,
+      22.1,
+      32.6,
+      23.9,
+      11.4,
+      20.2,
+      24.4,
+      23.2,
+      32.4,
+      36.7,
+      34.9,
+      35.7,
+      32.6,
+      38.6,
+      44.0,
+      57.0,
+      80.4,
+      138.1,
+      146.5,
+      155.9,
+      105.6,
+      78.3,
+      62.2,
+      58.0,
+      41.6,
+      29.7,
+      16.3,
+      34.3,
+      25.0,
+      26.0,
+      23.4,
+      14.2,
+      28.8,
+      42.6,
+      45.4,
+      48.4,
+      44.4,
+      65.2,
+      46.8,
+      36.3,
+      24.7,
+      17.6,
+      11.2,
+      9.0,
+      6.3,
+      13.4,
+      8.2,
+      12.1,
+      13.0,
+      9.0,
+      9.2,
+      7.5,
+      5.1,
+      1.6
+     ],
+     "identicalFrames": [],
+     "strikePeakPx": 155.9,
+     "recoveryPeakPx": 65.2,
+     "recoveryOverStrike": 0.418,
+     "activeSwingFrames": [
+      2,
+      27
+     ],
+     "slowRunsInSwing": [],
+     "pass": {
+      "stops": true,
+      "recovery40": false
+     }
+    }
+   },
+   "HeavyAttackAlternate": {
+    "before": {
+     "frames": 43,
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      17.4,
+      33.6,
+      24.1,
+      21.4,
+      27.2,
+      27.0,
+      18.3,
+      13.6,
+      16.1,
+      21.6,
+      13.3,
+      12.0,
+      12.8,
+      52.8,
+      74.3,
+      79.6,
+      44.9,
+      55.8,
+      58.4,
+      33.3,
+      39.9,
+      30.7,
+      23.0,
+      11.0,
+      11.2,
+      13.9,
+      9.8,
+      45.2,
+      34.2,
+      33.1,
+      45.7,
+      45.6,
+      42.9,
+      22.8,
+      10.5,
+      20.4,
+      25.2,
+      37.7,
+      37.5,
+      49.5,
+      23.4,
+      19.1
+     ],
+     "identicalFrames": [],
+     "strikePeakPx": 79.6,
+     "recoveryPeakPx": 49.5,
+     "recoveryOverStrike": 0.622,
+     "activeSwingFrames": [
+      1,
+      33
+     ],
+     "slowRunsInSwing": [],
+     "pass": {
+      "stops": true,
+      "recovery40": false
+     }
+    },
+    "after": {
+     "frames": 58,
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      5.2,
+      22.4,
+      43.5,
+      51.0,
+      40.5,
+      32.4,
+      30.3,
+      65.6,
+      101.6,
+      98.9,
+      45.6,
+      34.4,
+      13.0,
+      31.3,
+      30.7,
+      32.2,
+      55.8,
+      60.5,
+      113.8,
+      162.7,
+      115.4,
+      123.6,
+      81.3,
+      36.7,
+      29.8,
+      26.0,
+      25.6,
+      24.6,
+      11.5,
+      5.8,
+      9.5,
+      21.4,
+      20.4,
+      24.4,
+      30.5,
+      40.6,
+      51.3,
+      40.1,
+      25.1,
+      28.8,
+      26.9,
+      14.6,
+      16.6,
+      19.9,
+      20.6,
+      21.0,
+      17.2,
+      13.6,
+      11.0,
+      22.6,
+      29.2,
+      29.7,
+      25.5,
+      17.9,
+      13.3,
+      6.3,
+      3.3
+     ],
+     "identicalFrames": [],
+     "strikePeakPx": 162.7,
+     "recoveryPeakPx": 51.3,
+     "recoveryOverStrike": 0.315,
+     "activeSwingFrames": [
+      2,
+      27
+     ],
+     "slowRunsInSwing": [],
+     "pass": {
+      "stops": true,
+      "recovery40": true
+     }
+    }
+   },
+   "HeavyAttackTwoHand": {
+    "before": {
+     "frames": 49,
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      9.7,
+      26.9,
+      39.0,
+      48.0,
+      48.6,
+      81.8,
+      36.0,
+      35.0,
+      26.1,
+      44.5,
+      22.1,
+      31.3,
+      54.4,
+      73.5,
+      95.0,
+      96.0,
+      36.7,
+      1.4,
+      5.9,
+      8.3,
+      24.0,
+      45.3,
+      33.8,
+      44.2,
+      62.6,
+      38.2,
+      28.7,
+      73.3,
+      66.7,
+      32.2,
+      20.5,
+      18.3,
+      36.6,
+      39.3,
+      69.4,
+      42.5,
+      44.5,
+      45.4,
+      29.5,
+      33.5,
+      37.2,
+      37.4,
+      29.5,
+      22.7,
+      24.0,
+      14.9,
+      15.5,
+      14.9
+     ],
+     "identicalFrames": [],
+     "strikePeakPx": 96.0,
+     "recoveryPeakPx": 73.3,
+     "recoveryOverStrike": 0.764,
+     "activeSwingFrames": [
+      2,
+      27
+     ],
+     "slowRunsInSwing": [],
+     "pass": {
+      "stops": true,
+      "recovery40": false
+     }
+    },
+    "after": {
+     "frames": 49,
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      9.7,
+      25.8,
+      39.0,
+      44.8,
+      48.1,
+      81.0,
+      32.4,
+      22.3,
+      29.4,
+      36.7,
+      27.2,
+      11.3,
+      63.6,
+      70.4,
+      105.4,
+      87.1,
+      64.0,
+      62.1,
+      52.7,
+      62.5,
+      62.0,
+      22.8,
+      58.2,
+      57.6,
+      39.1,
+      18.3,
+      37.9,
+      31.7,
+      48.5,
+      29.4,
+      32.5,
+      31.8,
+      26.3,
+      21.6,
+      20.0,
+      20.0,
+      20.5,
+      15.0,
+      19.2,
+      24.7,
+      42.0,
+      26.2,
+      16.7,
+      17.3,
+      16.5,
+      13.9,
+      8.7,
+      3.9
+     ],
+     "identicalFrames": [],
+     "strikePeakPx": 105.4,
+     "recoveryPeakPx": 58.2,
+     "recoveryOverStrike": 0.552,
+     "activeSwingFrames": [
+      2,
+      23
+     ],
+     "slowRunsInSwing": [],
+     "pass": {
+      "stops": true,
+      "recovery40": false
+     }
+    }
+   },
+   "HeavyAttackTwoHandAlternate": {
+    "before": {
+     "frames": 70,
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      8.7,
+      19.8,
+      26.8,
+      29.3,
+      26.0,
+      23.9,
+      24.9,
+      24.4,
+      23.1,
+      24.0,
+      32.0,
+      23.0,
+      13.5,
+      8.5,
+      6.1,
+      3.8,
+      13.8,
+      24.8,
+      42.2,
+      84.3,
+      82.5,
+      77.3,
+      52.6,
+      35.6,
+      4.6,
+      2.8,
+      12.6,
+      23.4,
+      12.9,
+      67.6,
+      18.3,
+      26.0,
+      20.9,
+      49.8,
+      13.8,
+      3.5,
+      4.7,
+      4.5,
+      13.7,
+      52.8,
+      59.7,
+      19.8,
+      14.2,
+      6.0,
+      27.9,
+      40.7,
+      48.2,
+      14.9,
+      11.6,
+      21.5,
+      20.2,
+      17.6,
+      26.7,
+      37.6,
+      26.1,
+      34.9,
+      32.3,
+      22.1,
+      25.9,
+      16.3,
+      12.5,
+      27.3,
+      10.3,
+      14.5,
+      8.4,
+      11.0,
+      9.5,
+      9.1,
+      6.2
+     ],
+     "identicalFrames": [],
+     "strikePeakPx": 84.3,
+     "recoveryPeakPx": 59.7,
+     "recoveryOverStrike": 0.708,
+     "activeSwingFrames": [
+      2,
+      34
+     ],
+     "slowRunsInSwing": [],
+     "pass": {
+      "stops": true,
+      "recovery40": false
+     }
+    },
+    "after": {
+     "frames": 61,
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      8.2,
+      19.1,
+      26.3,
+      30.0,
+      24.8,
+      27.4,
+      24.5,
+      22.7,
+      24.8,
+      27.9,
+      49.8,
+      19.9,
+      12.7,
+      9.2,
+      14.4,
+      19.6,
+      31.2,
+      25.1,
+      44.4,
+      72.7,
+      84.5,
+      74.5,
+      51.7,
+      12.7,
+      12.9,
+      12.9,
+      12.9,
+      9.9,
+      10.0,
+      68.7,
+      17.5,
+      33.4,
+      21.4,
+      16.1,
+      15.1,
+      15.2,
+      13.1,
+      17.1,
+      12.3,
+      10.3,
+      14.7,
+      21.3,
+      13.6,
+      24.8,
+      39.2,
+      31.7,
+      17.1,
+      14.8,
+      18.5,
+      13.2,
+      16.4,
+      22.0,
+      11.9,
+      10.9,
+      19.0,
+      7.5,
+      5.5,
+      4.2,
+      5.4,
+      4.6
+     ],
+     "identicalFrames": [],
+     "strikePeakPx": 84.5,
+     "recoveryPeakPx": 39.2,
+     "recoveryOverStrike": 0.464,
+     "activeSwingFrames": [
+      2,
+      34
+     ],
+     "slowRunsInSwing": [],
+     "pass": {
+      "stops": true,
+      "recovery40": false
+     }
+    }
+   },
+   "LightCombo": {
+    "before": {
+     "frames": 101,
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      17.6,
+      19.9,
+      18.4,
+      23.6,
+      25.3,
+      22.4,
+      17.5,
+      49.2,
+      98.8,
+      79.2,
+      73.3,
+      13.8,
+      54.3,
+      44.5,
+      59.0,
+      60.7,
+      42.2,
+      46.4,
+      46.0,
+      40.8,
+      27.5,
+      41.4,
+      75.8,
+      81.9,
+      81.5,
+      126.3,
+      10.2,
+      75.3,
+      71.5,
+      73.4,
+      86.4,
+      45.9,
+      14.2,
+      17.3,
+      22.0,
+      18.5,
+      18.9,
+      8.0,
+      8.2,
+      8.3,
+      11.5,
+      7.7,
+      8.1,
+      12.0,
+      4.2,
+      11.8,
+      27.1,
+      30.8,
+      118.8,
+      151.2,
+      141.3,
+      133.1,
+      22.2,
+      0.0,
+      0.0,
+      53.1,
+      20.1,
+      28.7,
+      35.7,
+      37.7,
+      43.4,
+      73.3,
+      40.0,
+      11.9,
+      32.2,
+      49.6,
+      44.5,
+      98.2,
+      14.1,
+      25.8,
+      28.9,
+      46.9,
+      123.0,
+      60.2,
+      38.5,
+      33.8,
+      20.9,
+      32.9,
+      35.7,
+      37.1,
+      49.5,
+      26.2,
+      15.8,
+      10.5,
+      8.3,
+      7.2,
+      3.8,
+      5.5,
+      5.7,
+      2.7,
+      6.3,
+      9.4,
+      6.0,
+      8.8,
+      2.4,
+      12.0,
+      13.5,
+      7.2,
+      5.2,
+      3.2
+     ],
+     "identicalFrames": [
+      54,
+      55
+     ],
+     "strikePeakPx": 151.2,
+     "recoveryPeakPx": 123.0,
+     "recoveryOverStrike": 0.813,
+     "activeSwingFrames": [
+      1,
+      63
+     ],
+     "slowRunsInSwing": [
+      [
+       54,
+       55
+      ]
+     ],
+     "pass": {
+      "stops": false,
+      "recovery40": false
+     }
+    },
+    "after": {
+     "frames": 88,
+     "bladeSpeedPxPerFrame": [
+      0.0,
+      17.8,
+      20.5,
+      18.8,
+      23.9,
+      24.1,
+      20.7,
+      16.7,
+      50.8,
+      110.8,
+      83.3,
+      62.1,
+      59.1,
+      41.6,
+      50.6,
+      66.8,
+      42.6,
+      41.3,
+      47.6,
+      37.4,
+      32.9,
+      28.5,
+      70.6,
+      83.3,
+      81.9,
+      107.3,
+      96.5,
+      81.1,
+      76.7,
+      88.3,
+      39.5,
+      21.8,
+      19.2,
+      16.2,
+      23.0,
+      18.3,
+      7.3,
+      5.1,
+      11.1,
+      13.8,
+      20.6,
+      6.7,
+      14.3,
+      7.9,
+      5.6,
+      21.6,
+      27.6,
+      101.8,
+      154.6,
+      138.6,
+      89.4,
+      140.3,
+      27.1,
+      32.1,
+      29.7,
+      32.1,
+      40.5,
+      73.9,
+      45.5,
+      18.8,
+      36.4,
+      48.6,
+      47.5,
+      91.7,
+      23.2,
+      59.8,
+      27.4,
+      21.9,
+      34.3,
+      57.7,
+      38.9,
+      34.9,
+      25.0,
+      30.7,
+      31.0,
+      31.1,
+      32.6,
+      40.2,
+      11.1,
+      11.0,
+      10.4,
+      8.7,
+      6.4,
+      9.2,
+      8.2,
+      5.5,
+      3.2,
+      8.9
+     ],
+     "identicalFrames": [],
+     "strikePeakPx": 154.6,
+     "recoveryPeakPx": 91.7,
+     "recoveryOverStrike": 0.593,
+     "activeSwingFrames": [
+      1,
+      59
+     ],
+     "slowRunsInSwing": [],
+     "pass": {
+      "stops": true,
+      "recovery40": false
+     }
+    }
+   }
+  }
+ },
+ "timing": {
+  "HeavyAttackAlternate": {
+   "before": {
+    "glb": "Local/CustomuseAssets/Polish20261025/knight/HeavyAttackOneHand_Blender_v4r3.glb",
+    "clipSeconds": 1.4,
+    "rate": 1.0,
+    "gameSeconds": 1.4,
+    "damageClipSeconds": [
+     [
+      0.52,
+      0.94
+     ]
+    ],
+    "damageGameSeconds": [
+     [
+      0.52,
+      0.94
+     ]
+    ]
+   },
+   "after": {
+    "glb": "Local/CustomuseAssets/AttacksA1-20261031/knight/HeavyAttackAlternate_A1.glb",
+    "sha256": "09731e74c36c6066744dda1645a2ed0d2ea6a7bb1be576bbfae421c37020146e",
+    "source": "Local/CustomuseAssets/Attacks20261031/knight/Mixamo_SS_Attack1_v1.glb",
+    "sourceSHA256": "e46f90b64fde349d0d7edfab26cae9867dd02b65d77918c7c3db39d42c05bcbc",
+    "clipSeconds": 2.2,
+    "rate": 1.15,
+    "gameSeconds": 1.913,
+    "damageClipSeconds": [
+     [
+      0.71,
+      0.871
+     ]
+    ],
+    "damageGameSeconds": [
+     [
+      0.617,
+      0.757
+     ]
+    ],
+    "impactClipSeconds": 0.79
+   }
+  },
+  "HeavyAttackTwoHandAlternate": {
+   "before": {
+    "glb": "Local/CustomuseAssets/Polish20261025/knight/StrongAttackTwoHand_Thrust_Blender_v2r4.glb",
+    "clipSeconds": 2.307,
+    "rate": 1.0,
+    "gameSeconds": 2.307,
+    "damageClipSeconds": [
+     [
+      0.7,
+      0.98
+     ]
+    ],
+    "damageGameSeconds": [
+     [
+      0.7,
+      0.98
+     ]
+    ]
+   },
+   "after": {
+    "glb": "Local/CustomuseAssets/AttacksA1-20261031/knight/HeavyAttackTwoHandAlternate_A1.glb",
+    "sha256": "e5c6172ca9560f7bce37b06ca43bb4b418ba4e31b00ad8a2c8d0bfeb78d458df",
+    "source": "Local/CustomuseAssets/Polish20261025/knight/StrongAttackTwoHand_Thrust_Blender_v2r4.glb",
+    "sourceSHA256": "c58950ffbb551102e615718aa9feb042df3afcbecf23e6cb4ed94d92bd0bc020",
+    "clipSeconds": 2.008,
+    "rate": 1.0,
+    "gameSeconds": 2.008,
+    "damageClipSeconds": [
+     [
+      0.7,
+      0.976
+     ]
+    ],
+    "damageGameSeconds": [
+     [
+      0.7,
+      0.976
+     ]
+    ],
+    "impactClipSeconds": null
+   }
+  },
+  "HeavyAttackTwoHand": {
+   "before": {
+    "glb": "Local/CustomuseAssets/Polish20261025/knight/StrongAttackTwoHand_Sweep_Blender_v2r3.glb",
+    "clipSeconds": 1.613,
+    "rate": 1.0,
+    "gameSeconds": 1.613,
+    "damageClipSeconds": [
+     [
+      0.43,
+      0.74
+     ]
+    ],
+    "damageGameSeconds": [
+     [
+      0.43,
+      0.74
+     ]
+    ]
+   },
+   "after": {
+    "glb": "Local/CustomuseAssets/AttacksA1-20261031/knight/HeavyAttackTwoHand_A1.glb",
+    "sha256": "33257c165f13d806c7efcf2968c7535e0fb958053b35196c141888eeea23562a",
+    "source": "Local/CustomuseAssets/Polish20261025/knight/StrongAttackTwoHand_Sweep_Blender_v2r3.glb",
+    "sourceSHA256": "823bae1b454e88adf7a3ec33a2e6a05e53937ebcd54516606e19acc87280bc64",
+    "clipSeconds": 1.592,
+    "rate": 1.0,
+    "gameSeconds": 1.592,
+    "damageClipSeconds": [
+     [
+      0.43,
+      0.602
+     ]
+    ],
+    "damageGameSeconds": [
+     [
+      0.43,
+      0.602
+     ]
+    ],
+    "impactClipSeconds": null
+   }
+  },
+  "HeavyAttack": {
+   "before": {
+    "glb": "Local/CustomuseAssets/Polish20261025/knight/HeavyAttackOneHand_Blender_v4r5.glb",
+    "clipSeconds": 1.4,
+    "rate": 1.0,
+    "gameSeconds": 1.4,
+    "damageClipSeconds": [
+     [
+      0.52,
+      0.94
+     ]
+    ],
+    "damageGameSeconds": [
+     [
+      0.52,
+      0.94
+     ]
+    ]
+   },
+   "after": {
+    "glb": "Local/CustomuseAssets/AttacksA1-20261031/knight/HeavyAttack_A1.glb",
+    "sha256": "69df6e9fa5dc461d2eaa377d20d39a67a51729cbfd44027f18183121fe636054",
+    "source": "Local/CustomuseAssets/Attacks20261031/knight/Mixamo_SS_Attack3_v1.glb",
+    "sourceSHA256": "dc9f983b82903823adc7a5e14c5c89e9d81d046b64e854a3610877e98cea8f51",
+    "clipSeconds": 2.0,
+    "rate": 1.1,
+    "gameSeconds": 1.818,
+    "damageClipSeconds": [
+     [
+      0.65,
+      0.83
+     ]
+    ],
+    "damageGameSeconds": [
+     [
+      0.591,
+      0.755
+     ]
+    ],
+    "impactClipSeconds": 0.717
+   }
+  },
+  "LightAttackTwoHand": {
+   "before": {
+    "glb": "Local/CustomuseAssets/Polish20261025/knight/LightAttackTwoHand_Compact_Blender_v2r3.glb",
+    "clipSeconds": 1.2,
+    "rate": 1.0,
+    "gameSeconds": 1.2,
+    "damageClipSeconds": [
+     [
+      0.35,
+      0.56
+     ]
+    ],
+    "damageGameSeconds": [
+     [
+      0.35,
+      0.56
+     ]
+    ]
+   },
+   "after": {
+    "glb": "Local/CustomuseAssets/AttacksA1-20261031/knight/LightAttackTwoHand_A1.glb",
+    "sha256": "8fce23dc017db4b3283318133a32abc725d48ab51439a3405c8537c335fba2a5",
+    "source": "Local/CustomuseAssets/Polish20261025/knight/LightAttackTwoHand_Compact_Blender_v2r3.glb",
+    "sourceSHA256": "f7192952525c9c4f94c880dc61536d7c3ccd49bd40a946c58d542b0ad8843a70",
+    "clipSeconds": 1.175,
+    "rate": 1.0,
+    "gameSeconds": 1.175,
+    "damageClipSeconds": [
+     [
+      0.35,
+      0.531
+     ]
+    ],
+    "damageGameSeconds": [
+     [
+      0.35,
+      0.531
+     ]
+    ],
+    "impactClipSeconds": null
+   }
+  },
+  "LightAttack": {
+   "before": {
+    "glb": "Local/CustomuseAssets/Sourced20261025b/knight/Mixamo_Attack_v17.glb",
+    "clipSeconds": 1.5,
+    "rate": 1.6,
+    "gameSeconds": 0.938,
+    "damageClipSeconds": [
+     [
+      0.45,
+      0.72
+     ]
+    ],
+    "damageGameSeconds": [
+     [
+      0.281,
+      0.45
+     ]
+    ]
+   },
+   "after": {
+    "glb": "Local/CustomuseAssets/AttacksA1-20261031/knight/LightAttack_A1.glb",
+    "sha256": "b1aeeb34868b101c1aff127a1422ab0904d5a6cd57c14d4af96d7bff4c2c5505",
+    "source": "Local/CustomuseAssets/Attacks20261031/knight/Mixamo_SS_Slash1_v1.glb",
+    "sourceSHA256": "d277e5cca50e4c6e513231b79d9fc632b4427383431599af971f170bfd426349",
+    "clipSeconds": 1.44,
+    "rate": 1.35,
+    "gameSeconds": 1.067,
+    "damageClipSeconds": [
+     [
+      0.347,
+      0.567
+     ]
+    ],
+    "damageGameSeconds": [
+     [
+      0.257,
+      0.42
+     ]
+    ],
+    "impactClipSeconds": 0.39
+   }
+  },
+  "LightCombo": {
+   "before": {
+    "glb": "Local/CustomuseAssets/Polish20261025/knight/LightCombo_Blender_v5.glb",
+    "clipSeconds": 3.32,
+    "rate": 1.0,
+    "gameSeconds": 3.32,
+    "damageClipSeconds": [
+     [
+      0.3,
+      0.5
+     ],
+     [
+      0.7667,
+      1.0333
+     ],
+     [
+      1.6,
+      1.9633
+     ]
+    ],
+    "damageGameSeconds": [
+     [
+      0.3,
+      0.5
+     ],
+     [
+      0.767,
+      1.033
+     ],
+     [
+      1.6,
+      1.963
+     ]
+    ]
+   },
+   "after": {
+    "glb": "Local/CustomuseAssets/AttacksA1-20261031/knight/LightCombo_A1.glb",
+    "sha256": "9721170d962c97d93ae3464240e24a25a2de7877f8cfe709cf9c1e62721d6e15",
+    "source": "Local/CustomuseAssets/Polish20261025/knight/LightCombo_Blender_v5.glb",
+    "sourceSHA256": "ccea5025ebdfccd015cb2f94ea31069d96c5203b9eefdd83dc357c0fa54f59f5",
+    "clipSeconds": 2.908,
+    "rate": 1.0,
+    "gameSeconds": 2.908,
+    "damageClipSeconds": [
+     [
+      0.3,
+      0.475
+     ],
+     [
+      0.742,
+      0.983
+     ],
+     [
+      1.55,
+      1.813
+     ]
+    ],
+    "damageGameSeconds": [
+     [
+      0.3,
+      0.475
+     ],
+     [
+      0.742,
+      0.983
+     ],
+     [
+      1.55,
+      1.813
+     ]
+    ],
+    "impactClipSeconds": null
+   }
+  }
+ },
+ "heavyAttackAlternateJump": {
+  "note": "HeavyAttackAlternate A1 feet/hips per rendered frame (30 fps, game time): both feet off the ground f9-f20 (0.40 s), feet peak +37 cm, hips peak 148 cm (idle 131) at f14; hips fall from apex 0.6/1.8/5.0/10.6/18.7/30 cm over f15-f20 (free fall would be 0.5/2.2/4.9/8.7/13.6/19.6); kneel low point hips 47.7 cm f29-31.",
+  "airborneFrames": [
+   9,
+   20
+  ],
+  "feetPeakCm": 37.5,
+  "hipsPeakCm": 148.0,
+  "hipsKneelCm": 47.7
+ }
+}
