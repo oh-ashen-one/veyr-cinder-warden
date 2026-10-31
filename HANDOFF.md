@@ -36,6 +36,8 @@ put it in a repo.
 
 ## Where things stand
 
+**Owner playtest backlog (2026-10-31):** `BACKLOG.md` on branch `fable/knight-complete-20261028` (worktree `~/veyr-knight-20261028`). Dragon items there: idle wings cramped against the body, a playthrough replay showing every dragon move, fight capped at 2.5 min (MaxHealth 2800 now), camera shake/fight feel (none in code), music/SFX.
+
 **Dragon fix round 2 (2026-10-29, Studio, branch `claude-code-enhancements`, not pushed):**
 - Nine v4 Actions built from the round-2 critique (`Local/video2rig/dragon/Dragon_<Move>_sd_v2r_v4.blend`, Actions
   `roar_v4`, `collapse_v4`, `bite_v4`, `land2_v4`, `rise_v4`, `air_hover_v4`, `air_land_v4`, `takeoff3_v4`,
