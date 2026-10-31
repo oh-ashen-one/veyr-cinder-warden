@@ -991,6 +991,15 @@ bool AVeyrReplay::DriveIntegrationInputs()
         // Locked trials: the knight must actually face the boss (within ~8 deg) before the input, so the knight's own left/right decision matches the scenario's.
         if(Trial.Lock&&FVector::DotProduct(Knight->GetActorForwardVector().GetSafeNormal2D(),BossFlat)<FMath::Cos(FMath::DegreesToRadians(8.f))){IntegrationConfiguredAt=Elapsed;return true;}
         if(Elapsed-IntegrationConfiguredAt<.40f)return true;
+        // Primary chains are stationary for their whole length (1H: light+light+heavy, 3.95 s with the A1 clips of
+        // v030t, was 3.28 s); start them in a predicted safe window that covers the chain, as the heal trials do.
+        // Bounded: after 15 s of waiting in this trial the input is issued anyway (the 40 s trial timeout stays).
+        if(Trial.Kind==EExercise::Primary&&Elapsed-IntegrationStageStarted<15.f)
+        {
+            const float ChainSeconds=Trial.Two?AuthoredKnightSeconds(TEXT("LightCombo"),3.32f):2.f*Knight->GetAttackDuration(false)+Knight->GetAttackDuration(true);
+            if(SafeStationarySeconds(Feet)<ChainSeconds)return true;
+            IntegrationTrial->SetNumberField(TEXT("primaryChainSafeWindowSeconds"),ChainSeconds);
+        }
         IntegrationOrigin=Feet;IntegrationRequestedAt=Elapsed;IntegrationContactsBefore=Dragon->GetSwordContactCount();IntegrationHitsBefore=Knight->HitsTaken;
         IntegrationEchoesBefore=Knight->BlinkEchoCaptures;IntegrationHiddenWindowsBefore=Knight->BlinkHiddenWindows;IntegrationRollsBefore=Knight->Rolls;IntegrationRollAttacksBefore=Knight->RollAttacks;
         IntegrationLightBefore=Knight->LightAttacks;IntegrationHeavyBefore=Knight->HeavyAttacks;IntegrationBlinksBefore=Knight->BlinkDodges;

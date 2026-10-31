@@ -3279,5 +3279,108 @@
   "feetPeakCm": 37.5,
   "hipsPeakCm": 148.0,
   "hipsKneelCm": 47.7
+ },
+ "gates_v030t_20261031T1644": {
+  "build": "Local/package-20261031T164233Z (v030t, Shipping, built at e5cc7e7, sourceId f075803b..., includes the shadow-dash blink 5c7feef and the A1 attacks)",
+  "gpuWait": "GPU shared under the cap (gpu_slot capture, waited ~9 min for another session's editor to free the 2-client cap); gpu.json marks fps not perf-valid",
+  "runs": [
+   {
+    "mode": "integration",
+    "passed": true,
+    "fps": 24.7,
+    "frameCount": 2328,
+    "durationSeconds": 94.1,
+    "evidence": "Evidence/native-integration-20261031T164443Z",
+    "reason": "all18 updated integration features with explicit blink, sprint, authored grip completion and primary-button chains; contacts recorded separately",
+    "gpuUtilAvg": 58.1,
+    "gpuUtilMax": 83.0,
+    "perfValid": false
+   },
+   {
+    "mode": "integration",
+    "passed": true,
+    "fps": 22.1,
+    "frameCount": 2609,
+    "durationSeconds": 117.8,
+    "evidence": "Evidence/native-integration-20261031T165526Z",
+    "reason": "all18 updated integration features with explicit blink, sprint, authored grip completion and primary-button chains; contacts recorded separately",
+    "gpuUtilAvg": 56.1,
+    "gpuUtilMax": 79.0,
+    "perfValid": false
+   },
+   {
+    "mode": "integration",
+    "passed": false,
+    "fps": 24.0,
+    "frameCount": 2349,
+    "durationSeconds": 97.7,
+    "evidence": "Evidence/native-integration-20261031T165749Z",
+    "reason": "integration feature interrupted/rejected three times: one_hand_primary_chain",
+    "gpuUtilAvg": 56.5,
+    "gpuUtilMax": 80.0,
+    "perfValid": false
+   },
+   {
+    "mode": "core",
+    "passed": true,
+    "fps": 41.3,
+    "frameCount": 1756,
+    "durationSeconds": 42.6,
+    "evidence": "Evidence/native-core-20261031T165952Z",
+    "reason": "jump-disabled light heavy collapse head bonus completed rise and dodge contact observed",
+    "gpuUtilAvg": 60.7,
+    "gpuUtilMax": 79.0,
+    "perfValid": false
+   },
+   {
+    "mode": "death",
+    "passed": true,
+    "fps": 51.2,
+    "frameCount": 742,
+    "durationSeconds": 14.5,
+    "evidence": "Evidence/native-death-20261031T170100Z",
+    "reason": "death terminal pose, resource reset, movement and primary attack after restart verified",
+    "gpuUtilAvg": 73.2,
+    "gpuUtilMax": 76.0,
+    "perfValid": false
+   },
+   {
+    "mode": "lockon",
+    "passed": true,
+    "fps": 46.9,
+    "frameCount": 1628,
+    "durationSeconds": 34.7,
+    "evidence": "Evidence/native-lockon-20261031T170139Z",
+    "reason": "lock-on: 10 locomotion trials sampled their clips, max facing error 8.4 deg; blink direction 3/3; directional stagger lab 5/5",
+    "gpuUtilAvg": 69.2,
+    "gpuUtilMax": 82.0,
+    "perfValid": false
+   },
+   {
+    "mode": "controls",
+    "passed": true,
+    "fps": 24.7,
+    "frameCount": 2355,
+    "durationSeconds": 95.2,
+    "evidence": "Evidence/native-controls-20261031T170239Z",
+    "reason": "movement jump-disabled attacks roll stamina recovery lock toggles actual guard contact heal and full-health rejection observed",
+    "gpuUtilAvg": 57.6,
+    "gpuUtilMax": 80.0,
+    "perfValid": false
+   },
+   {
+    "mode": "guard",
+    "passed": true,
+    "fps": 45.0,
+    "frameCount": 1657,
+    "durationSeconds": 36.8,
+    "evidence": "Evidence/native-guard-20261031T170440Z",
+    "reason": "front chip block, rear full damage while guarding with ample stamina, and real exhausted guard break verified",
+    "gpuUtilAvg": 68.9,
+    "gpuUtilMax": 80.0,
+    "perfValid": false
+   }
+  ],
+  "summary": "7/8 passed: integration pass 24.7, integration pass 22.1, integration FAIL 24.0, core pass 41.3, death pass 51.2, lockon pass 46.9, controls pass 24.7, guard pass 45.0"
  }
 }
