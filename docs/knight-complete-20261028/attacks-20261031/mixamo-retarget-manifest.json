@@ -1,0 +1,123 @@
+{
+ "date": "2026-10-31",
+ "note": "plain retarget (retarget.py run(), in place, WeaponSocket on the right hand with the approved walk grip); no weapon fit, no blade arc",
+ "clips": [
+  {
+   "name": "Attack1",
+   "source": "Local/FabRigTesting/Source/Mixamo/sword and shield attack.fbx",
+   "sourceFBX": "sword and shield attack.fbx",
+   "provider": "mixamo (free, downloaded earlier)",
+   "retargetExport": "Local/FabRigTesting/Exports/Mixamo_SS_Attack1_v1.glb",
+   "retargetExportSHA256": "d7e11147b7e213d9fa09ab31503c110c3033889cc9d04d3182b8d3c137b8a146",
+   "file": "Local/CustomuseAssets/Attacks20261031/knight/Mixamo_SS_Attack1_v1.glb",
+   "sha256": "e46f90b64fde349d0d7edfab26cae9867dd02b65d77918c7c3db39d42c05bcbc",
+   "duration": 2.3333332538604736,
+   "maxReconstructionError": 1.0782966886058176e-07,
+   "handAuthoredMotion": false
+  },
+  {
+   "name": "Attack2",
+   "source": "Local/FabRigTesting/Source/Mixamo/sword and shield attack (2).fbx",
+   "sourceFBX": "sword and shield attack (2).fbx",
+   "provider": "mixamo (free, downloaded earlier)",
+   "retargetExport": "Local/FabRigTesting/Exports/Mixamo_SS_Attack2_v1.glb",
+   "retargetExportSHA256": "ee0c35e10ce036d008cacab14051f382fb03f68267eb8eaf408b6f66735e486a",
+   "file": "Local/CustomuseAssets/Attacks20261031/knight/Mixamo_SS_Attack2_v1.glb",
+   "sha256": "73f74c98932d132a7e6f5b804bf17457e5de2c19f9e91185e70cf47b402543aa",
+   "duration": 1.2999999523162842,
+   "maxReconstructionError": 1.1661597976164728e-07,
+   "handAuthoredMotion": false
+  },
+  {
+   "name": "Attack3",
+   "source": "Local/FabRigTesting/Source/Mixamo/sword and shield attack (3).fbx",
+   "sourceFBX": "sword and shield attack (3).fbx",
+   "provider": "mixamo (free, downloaded earlier)",
+   "retargetExport": "Local/FabRigTesting/Exports/Mixamo_SS_Attack3_v1.glb",
+   "retargetExportSHA256": "de3f94f8aa28a29ef9001e3ecc61c44b0895f232c99247c6441b8309359e401d",
+   "file": "Local/CustomuseAssets/Attacks20261031/knight/Mixamo_SS_Attack3_v1.glb",
+   "sha256": "dc9f983b82903823adc7a5e14c5c89e9d81d046b64e854a3610877e98cea8f51",
+   "duration": 1.7333333492279053,
+   "maxReconstructionError": 1.0422865587278451e-07,
+   "handAuthoredMotion": false
+  },
+  {
+   "name": "Attack4",
+   "source": "Local/FabRigTesting/Source/Mixamo/sword and shield attack (4).fbx",
+   "sourceFBX": "sword and shield attack (4).fbx",
+   "provider": "mixamo (free, downloaded earlier)",
+   "retargetExport": "Local/FabRigTesting/Exports/Mixamo_SS_Attack4_v1.glb",
+   "retargetExportSHA256": "9c22ce0088b9f2dfecefc12110d4ecfcd2ba88f806df84501f349f65a939b3cc",
+   "file": "Local/CustomuseAssets/Attacks20261031/knight/Mixamo_SS_Attack4_v1.glb",
+   "sha256": "06435e76f6b0b833e4de48ebf22220ccc8468f3d906f9307629076a6d184a03b",
+   "duration": 1.0,
+   "maxReconstructionError": 7.630663262370163e-08,
+   "handAuthoredMotion": false
+  },
+  {
+   "name": "Slash1",
+   "source": "Local/FabRigTesting/Source/Mixamo/sword and shield slash.fbx",
+   "sourceFBX": "sword and shield slash.fbx",
+   "provider": "mixamo (free, downloaded earlier)",
+   "retargetExport": "Local/FabRigTesting/Exports/Mixamo_SS_Slash1_v1.glb",
+   "retargetExportSHA256": "51ef4122365dc70f9a3eececcb46b9369b38e217c0bf76066f49f657f40a6c2d",
+   "file": "Local/CustomuseAssets/Attacks20261031/knight/Mixamo_SS_Slash1_v1.glb",
+   "sha256": "d277e5cca50e4c6e513231b79d9fc632b4427383431599af971f170bfd426349",
+   "duration": 1.5,
+   "maxReconstructionError": 9.836152037312473e-08,
+   "handAuthoredMotion": false
+  },
+  {
+   "name": "Slash2",
+   "source": "Local/FabRigTesting/Source/Mixamo/sword and shield slash (2).fbx",
+   "sourceFBX": "sword and shield slash (2).fbx",
+   "provider": "mixamo (free, downloaded earlier)",
+   "retargetExport": "Local/FabRigTesting/Exports/Mixamo_SS_Slash2_v1.glb",
+   "retargetExportSHA256": "08eea507404fa7cee5c092e2e9056b005b82a0246cf6fe2fb8be07423d9847b1",
+   "file": "Local/CustomuseAssets/Attacks20261031/knight/Mixamo_SS_Slash2_v1.glb",
+   "sha256": "f0c1404dd0dd344beeae56d49c8059f073e8c4bf8367f9217149d43b6b9f183a",
+   "duration": 3.5333333015441895,
+   "maxReconstructionError": 1.5280464857325704e-07,
+   "handAuthoredMotion": false
+  },
+  {
+   "name": "Slash3",
+   "source": "Local/FabRigTesting/Source/Mixamo/sword and shield slash (3).fbx",
+   "sourceFBX": "sword and shield slash (3).fbx",
+   "provider": "mixamo (free, downloaded earlier)",
+   "retargetExport": "Local/FabRigTesting/Exports/Mixamo_SS_Slash3_v1.glb",
+   "retargetExportSHA256": "539c8f071d6199fb404c8fb6cba531c63d792095df51b43d88c36466ade25eac",
+   "file": "Local/CustomuseAssets/Attacks20261031/knight/Mixamo_SS_Slash3_v1.glb",
+   "sha256": "03c512d2a11e818e1c32e16c9a298dd3a580c31b4e401ff3613ea746022041e5",
+   "duration": 1.5666667222976685,
+   "maxReconstructionError": 1.5128034505651478e-07,
+   "handAuthoredMotion": false
+  },
+  {
+   "name": "Slash4",
+   "source": "Local/FabRigTesting/Source/Mixamo/sword and shield slash (4).fbx",
+   "sourceFBX": "sword and shield slash (4).fbx",
+   "provider": "mixamo (free, downloaded earlier)",
+   "retargetExport": "Local/FabRigTesting/Exports/Mixamo_SS_Slash4_v1.glb",
+   "retargetExportSHA256": "e49959b1f9a951a46e3265ff9dd86d5dce3751f4cfbdb2a40bb05a10c132d52c",
+   "file": "Local/CustomuseAssets/Attacks20261031/knight/Mixamo_SS_Slash4_v1.glb",
+   "sha256": "2d9ef9aaf70525c18f0ac4f426dc427363620bec49b35f4dfc52150edf33ef62",
+   "duration": 2.299999952316284,
+   "maxReconstructionError": 1.1212117995151871e-07,
+   "handAuthoredMotion": false
+  },
+  {
+   "name": "Slash5",
+   "source": "Local/FabRigTesting/Source/Mixamo/sword and shield slash (5).fbx",
+   "sourceFBX": "sword and shield slash (5).fbx",
+   "provider": "mixamo (free, downloaded earlier)",
+   "retargetExport": "Local/FabRigTesting/Exports/Mixamo_SS_Slash5_v1.glb",
+   "retargetExportSHA256": "eb8b385c7c8e2dfb695480c704d8be7b96a306fbeb67351ece58addbedac1263",
+   "file": "Local/CustomuseAssets/Attacks20261031/knight/Mixamo_SS_Slash5_v1.glb",
+   "sha256": "9f6354ac6c538acd3cce5601dd075c70558ab42776329ac75a330338d3b15c86",
+   "duration": 1.3666666746139526,
+   "maxReconstructionError": 1.2858444303764927e-07,
+   "handAuthoredMotion": false
+  }
+ ]
+}
