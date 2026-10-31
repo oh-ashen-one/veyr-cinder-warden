@@ -202,6 +202,8 @@ private:
     // Shadow-dash blink (owner 2026-10-31): 0 departure, 1 arrival, 2 live shade that travels while the knight is
     // hidden, 3..6 trail stills dropped along the path.
     static constexpr int32 BlinkEchoCount=7,BlinkEchoShade=2,BlinkEchoTrailFirst=3;
+    float BlinkReviewSlowMo=1.f;
+    bool bBlinkClassicEcho=false;
     bool bBlinkEchoCaptured[BlinkEchoCount]={};
     float BlinkEchoStarted[BlinkEchoCount]={};
     void ClearBlinkEchoes();

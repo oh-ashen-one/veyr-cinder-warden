@@ -242,6 +242,11 @@ void AVeyrKnight::BeginPlay()
         RunStopBlendSeconds=FMath::Clamp(RequestedRunStopBlend,.02f,.60f);
     if(DirectionalStaggers.Num()!=4)DirectionalStaggers.Init(0,4);
     bWeaponGripLockEnabled=!FParse::Param(FCommandLine::Get(),TEXT("VeyrNoWeaponGripLock"));
+    // Review capture only: -VeyrBlinkSlowMo=0.2 slows the whole game while a blink plays so a 15 fps capture sees it.
+    if(FParse::Value(FCommandLine::Get(),TEXT("VeyrBlinkSlowMo="),BlinkReviewSlowMo)&&FMath::IsFinite(BlinkReviewSlowMo))
+        BlinkReviewSlowMo=FMath::Clamp(BlinkReviewSlowMo,.05f,1.f);
+    else BlinkReviewSlowMo=1.f;
+    bBlinkClassicEcho=FParse::Param(FCommandLine::Get(),TEXT("VeyrBlinkClassicEcho"));
     float RequestedLockBlend=0.f;
     if(FParse::Value(FCommandLine::Get(),TEXT("VeyrLockOnBlend="),RequestedLockBlend)&&FMath::IsFinite(RequestedLockBlend))LockOnBlendSeconds=FMath::Clamp(RequestedLockBlend,.02f,.60f);
     UE_LOG(LogTemp,Display,TEXT("VEYR_KNIGHT_ROUND2 weaponGripLock=%d lockOnBlend=%.2f"),bWeaponGripLockEnabled?1:0,LockOnBlendSeconds);
@@ -672,6 +677,11 @@ void AVeyrKnight::Tick(float DeltaSeconds)
     UpdateEquippedWeapon();
     UpdateHealFlask();
     UpdateBlinkEchoes();
+    if(BlinkReviewSlowMo<1.f)
+    {
+        const float Want=IsBlinkAction()&&!IsTerminal()?BlinkReviewSlowMo:1.f;
+        if(!FMath::IsNearlyEqual(UGameplayStatics::GetGlobalTimeDilation(this),Want))UGameplayStatics::SetGlobalTimeDilation(this,Want);
+    }
     UpdateCamera(DeltaSeconds);
     UpdateTemporaryPresentation(DeltaSeconds);
 }
@@ -1267,11 +1277,26 @@ void AVeyrKnight::UpdateBlinkEchoes()
     // The knight is hidden for .18-.34 s while the authored root carries it sideways. A dark shade copies the live pose
     // and travels with it, still echoes drop along the path and fade, the departure shadow lingers and the arrival
     // shadow overlays the knight as it solidifies. Late captures keep their authored source time (round-2 rule).
-    static const FLinearColor ShadeTint(.012f,.016f,.035f),TrailTint(.03f,.07f,.16f),EndTint(.02f,.03f,.07f);
+    static const FLinearColor ShadeTint(.004f,.005f,.010f),TrailTint(.010f,.016f,.040f),EndTint(.006f,.008f,.020f);
     constexpr float HiddenStart=.18f,HiddenEnd=.34f;
-    constexpr float DepartureOpacity=.42f,DepartureLife=.34f,ArrivalOpacity=.38f,ArrivalLife=.16f;
-    constexpr float ShadeOpacity=.62f,TrailOpacity=.30f,TrailLife=.24f;
+    constexpr float DepartureOpacity=.55f,DepartureLife=.36f,ArrivalOpacity=.50f,ArrivalLife=.18f;
+    constexpr float ShadeOpacity=.82f,TrailOpacity=.45f,TrailLife=.30f;
     static const float TrailTimes[BlinkEchoCount-BlinkEchoTrailFirst]={.205f,.245f,.285f,.325f};
+    if(bBlinkClassicEcho)
+    {
+        // Before behaviour (v030s): two faint blue echoes only.
+        static const FLinearColor ClassicTint(.08f,.32f,.55f);
+        if(!bBlinkEchoCaptured[0]&&ActionElapsed>=.16f)CaptureBlinkEcho(0,.16f,ClassicTint,.14f,true);
+        if(!bBlinkEchoCaptured[1]&&ActionElapsed>=.34f)CaptureBlinkEcho(1,.34f,ClassicTint,.10f,true);
+        for(int32 I=0;I<2;++I)
+        {
+            if(!bBlinkEchoCaptured[I])continue;
+            const float Age=ActionElapsed-BlinkEchoStarted[I],Life=I==0?.20f:.09f;
+            BlinkEchoBodies[I]->SetVisibility(Age<Life);BlinkEchoWeapons[I]->SetVisibility(Age<Life);
+            if(BlinkEchoMaterials[I])BlinkEchoMaterials[I]->SetScalarParameterValue(TEXT("Opacity"),(I==0?.14f:.10f)*FMath::Clamp(1.f-Age/Life,0.f,1.f));
+        }
+        return;
+    }
     if(!bBlinkEchoCaptured[0]&&ActionElapsed>=.16f)CaptureBlinkEcho(0,.16f,EndTint,DepartureOpacity,true);
     for(int32 T=0;T<BlinkEchoCount-BlinkEchoTrailFirst;++T)
     {
